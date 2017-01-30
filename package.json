@@ -6,7 +6,9 @@
   "scripts": {
     "start": "nodemon server/index.js  --exec babel-node --presets es2015,stage-0",
     "prod": "webpack -p",
-    "lint": "eslint app/**/*.js webpack.config.js"
+    "lint": "eslint app/**/*.js webpack.config.js",
+    "load-dev-db": "source ./scripts/load.sh",
+    "clean-dev-db": "source ./scripts/clean.sh"
   },
   "author": "Alexandre Serra Jaumot",
   "license": "MIT",
