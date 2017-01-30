@@ -1,0 +1,6 @@
+mongo vod-development --eval "db.categories.remove({})"
+mongo vod-development --eval "db.equipment.remove({})"
+mongo vod-development --eval "db.ingredients.remove({})"
+mongo vod-development --eval "db.learningpaths.remove({})"
+mongo vod-development --eval "db.chefs.remove({})"
+mongo vod-development --eval "db.tags.remove({})"
