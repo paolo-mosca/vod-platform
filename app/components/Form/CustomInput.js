@@ -6,7 +6,7 @@ function formatSelectValue(data) {
   if (!Array.isArray(data)) {
     return data && data.value
   }
-  return data.map(opt => opt.value)
+  return data.map((opt) => opt.value)
 }
 
 export default function CustomInput({

@@ -1,8 +1,7 @@
 import React, { PropTypes } from 'react'
 
-import Moment from 'react-moment'
-  // const Moment=require('react-moment').default
-// import { StyleSheet, css } from 'aphrodite'
+// import Moment from 'react-moment'
+
 
 function RecipeComponent(props) {
   return (

@@ -1,7 +1,5 @@
 import React, { PropTypes } from 'react'
 
-import { StyleSheet, css } from 'aphrodite'
-
 function StepList ({ steps }) {
   return (
     <section className='steps'>

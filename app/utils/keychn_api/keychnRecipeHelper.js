@@ -5,7 +5,7 @@ function getRecipeInfo (recipeId) {
 }
 
 var helpers = {
-  getRecipe: function () {
+  getRecipe () {
     return getRecipeInfo ()
     .then((info) => { info.map((recipe) => { recipe.data } ) }) // to be modified, depending on the properties of the object returned
     .catch((err) => { console.warn('Error in getRecipe: ', err) })
