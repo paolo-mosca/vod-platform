@@ -18,7 +18,7 @@ var RecipeContainer = React.createClass({
       .then((clickedRecipe) => { // Assumption: the object return is an object
         this.setState({
           isLoading: false,
-          recipe: recipe
+          recipe
         })
       })
   },

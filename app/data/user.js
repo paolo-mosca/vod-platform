@@ -20,7 +20,7 @@ export function signIn(data) {
 export function logout() {
   return function(dispatch) {
     return get('/api/users/logout')
-      .then(res => {
+      .then((res) => {
         if (res.status === 200) {
           browserHistory.push('/')
         }

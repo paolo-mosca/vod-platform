@@ -1,5 +1,3 @@
-
-
 export function post(url, data) {
   return fetch(url, {
     method: 'POST',

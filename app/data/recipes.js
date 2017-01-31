@@ -25,7 +25,7 @@ export function fetchRecipes() {
   return function (dispatch) {
     return get('/api/recipes')
       .then((res) => res.json())
-      .then(recipes => {
+      .then((recipes) => {
         console.log(recipes, 'rec')
         dispatch(setRecipes(recipes))
       })
@@ -82,7 +82,7 @@ export function createOrUpdateRecipe(data, slug) {
 
 // selectors
 export function recipeBySlug(state, slug) {
-  return state.recipes.find(recipe => recipe.slug === slug)
+  return state.recipes.find((recipe) => recipe.slug === slug)
 }
 
 

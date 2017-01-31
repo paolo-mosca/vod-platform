@@ -3,7 +3,7 @@ import Header from './HeaderFooter/Header'
 import Footer from './HeaderFooter/Footer'
 
 const Main = React.createClass({
-  render: function () {
+  render () {
     const {location} = this.props
     return (
       <div className='main-container'>
