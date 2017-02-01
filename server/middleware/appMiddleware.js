@@ -41,7 +41,7 @@ module.exports = function(app) {
 
   if (env === 'development') {
     var webpack = require('webpack')
-    var webpackConfig = require('../../webpack.config.babel')
+    var webpackConfig = require('../../webpack.config.babel').default
     var compiler = webpack(webpackConfig)
     app.use(require('webpack-dev-middleware')(compiler, {
       noInfo: true,
