@@ -9,6 +9,11 @@ import { browserHistory } from 'react-router'
   form: 'register'
 })
 export default class RegisterForm extends React.Component {
+  static propTypes = {
+    submitting: PropTypes.bool.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    dispatch: PropTypes.func.isRequired
+  }
   constructor (props) {
     super(props)
     this.submit = this.submit.bind(this)
