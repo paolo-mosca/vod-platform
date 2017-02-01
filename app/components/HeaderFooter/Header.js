@@ -3,7 +3,10 @@ import { Link } from 'react-router'
 import SecondaryHeader from './SecondaryHeader'
 
 const Header = React.createClass({
-  render() {
+  propTypes: {
+    location: React.PropTypes.object
+  },
+  render () {
     const {location} = this.props
     return (
       <header className='navigation__header'>
@@ -18,7 +21,7 @@ const Header = React.createClass({
               </ul>
             </div>
           </nav>
-          {location.pathname === '/' ? <SecondaryHeader />: null}
+          {location.pathname === '/' ? <SecondaryHeader /> : null}
         </div>
       </header>
     )

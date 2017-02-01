@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import CategoryList from './CategoryList'
 
-function RecipeComponentDetailed(props) {
+function RecipeComponentDetailed (props) {
   return (
     <section className ='card-recipe-detailed'>
       <div className='recipe-video-preview-holder-detailed'>
@@ -32,7 +32,7 @@ function RecipeComponentDetailed(props) {
   )
 }
 
-RecipeComponentDetailed.propTypes={
+RecipeComponentDetailed.propTypes = {
   videoFull: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,

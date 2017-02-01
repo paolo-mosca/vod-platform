@@ -6,13 +6,13 @@ var RecipeListContainer = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },
-  getInitialState() {
+  getInitialState () {
     return {
       isLoading: true,
-      recipeList: [],
+      recipeList: []
     }
   },
-  componentDidMount() {
+  componentDidMount () {
     keychnRecipeOverviewHelper.getRecipeList()
       .then((recipes) => { // Assumption: the object return is an ARRAY
         this.setState({
@@ -21,7 +21,7 @@ var RecipeListContainer = React.createClass({
         })
       })
   },
-  render() {
+  render () {
     return (
       <RecipeListFromAPI
         isLoading={this.state.isLoading}

@@ -4,13 +4,13 @@ import CustomInput from '../Form/CustomInput'
 import {required, url} from '../Form/validations'
 
 export default class Steps extends Component {
-  componentDidMount() {
+  componentDidMount () {
     const {fields} = this.props
     if (fields.length === 0) {
       fields.push({})
     }
   }
-  render() {
+  render () {
     const {fields} = this.props
     return (
       <div>

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-function IngredientList ( { ingredients }) {
+function IngredientList ({ ingredients }) {
   return (
     <section className='ingredients'>
       <h5>Ingredients</h5>

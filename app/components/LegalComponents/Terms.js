@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Terms() {
+function Terms () {
   return (
     <section className='subsection-recipes grid container'>
       <section className='terms'>
@@ -26,22 +26,22 @@ function Terms() {
         <h2>Conditions of Use:</h2>
           <h3>User Conduct:</h3>
             <p>User Conduct: You are solely responsible for all code, video, images, information, data, text, software, music, sound, photographs, graphics, messages or other materials (“content”) that you upload, post, publish or display (hereinafter, “upload”) or email or otherwise use via the Service. The following are examples of the kind of content and/or use that is illegal or prohibited by Keychn. Keychn reserves the right to investigate and take appropriate legal action against anyone who, in Keychn’s sole discretion, violates this provision, including without limitation, removing the offending content from the Service, suspending or terminating the account of such violators and reporting you to the law enforcement authorities. You agree to not use the Service to:
-            a.	email or otherwise upload any content that:
-            i.	infringes any intellectual property or other proprietary rights of any party;
-            ii.	you do not have a right to upload under any law or under contractual or fiduciary relationships;
-            iii.	contains software viruses or any other computer code, files or programs designed to interrupt, destroy or limit the functionality of any computer software or hardware or telecommunications equipment;
-            iv.	poses or creates a privacy or security risk to any person;
-            v.	constitutes unsolicited or unauthorized advertising, promotional materials, commercial activities and/or sales, “junk mail,” “spam,” “chain letters,” “pyramid schemes,” “contests,” “sweepstakes,” or any other form of solicitation;
-            vi.	is unlawful, harmful, threatening, abusive, harassing, tortious, excessively violent, defamatory, vulgar, obscene, pornographic, libelous, invasive of another’s privacy, hateful racially, ethnically or otherwise objectionable; or
-            vii.	in the sole judgment of Keychn, is objectionable or which restricts or inhibits any other person from using or enjoying the Service, or which may expose Keychn or its users to any harm or liability of any type;
-            b.	interfere with or disrupt the Service or servers or networks connected to the Service, or disobey any requirements, procedures, policies or regulations of networks connected to the Service; or
-            c.	violate any applicable local, state, national or international law, or any regulations having the force of law;
-            d.	impersonate any person or entity, or falsely state or otherwise misrepresent your affiliation with a person or entity;
-            e.	solicit personal information from anyone under the age of 18;
-            f.	harvest or collect email addresses or other contact information of other users from the Service by electronic or other means for the purposes of sending unsolicited emails or other unsolicited communications;
-            g.	advertise or offer to sell or buy any goods or services for any business purpose that is not specifically authorized;
-            h.	further or promote any criminal activity or enterprise or provide instructional information about illegal activities; or
-            i.	obtain or attempt to access or otherwise obtain any materials or information through any means not intentionally made available or provided for through the Service.
+            a.email or otherwise upload any content that:
+            i.infringes any intellectual property or other proprietary rights of any party;
+            ii.you do not have a right to upload under any law or under contractual or fiduciary relationships;
+            iii.contains software viruses or any other computer code, files or programs designed to interrupt, destroy or limit the functionality of any computer software or hardware or telecommunications equipment;
+            iv.poses or creates a privacy or security risk to any person;
+            v.constitutes unsolicited or unauthorized advertising, promotional materials, commercial activities and/or sales, “junk mail,” “spam,” “chain letters,” “pyramid schemes,” “contests,” “sweepstakes,” or any other form of solicitation;
+            vi.is unlawful, harmful, threatening, abusive, harassing, tortious, excessively violent, defamatory, vulgar, obscene, pornographic, libelous, invasive of another’s privacy, hateful racially, ethnically or otherwise objectionable; or
+            vii.in the sole judgment of Keychn, is objectionable or which restricts or inhibits any other person from using or enjoying the Service, or which may expose Keychn or its users to any harm or liability of any type;
+            b.interfere with or disrupt the Service or servers or networks connected to the Service, or disobey any requirements, procedures, policies or regulations of networks connected to the Service; or
+            c.violate any applicable local, state, national or international law, or any regulations having the force of law;
+            d.impersonate any person or entity, or falsely state or otherwise misrepresent your affiliation with a person or entity;
+            e.solicit personal information from anyone under the age of 18;
+            f.harvest or collect email addresses or other contact information of other users from the Service by electronic or other means for the purposes of sending unsolicited emails or other unsolicited communications;
+            g.advertise or offer to sell or buy any goods or services for any business purpose that is not specifically authorized;
+            h.further or promote any criminal activity or enterprise or provide instructional information about illegal activities; or
+            i.obtain or attempt to access or otherwise obtain any materials or information through any means not intentionally made available or provided for through the Service.
             </p>
           <h2>Special Notice for International Use; Export Controls:</h2>
             <p>Software (defined below) available in connection with the Service and the transmission of applicable data, if any, is subject to United States export controls. No Software may be downloaded from the Service or otherwise exported or re-exported in violation of U.S. export laws. Downloading or using the Software is at your sole risk. Recognizing the global nature of the Internet, you agree to comply with all local rules and laws regarding your use of the Service, including as it concerns online conduct and acceptable content.</p>
@@ -51,20 +51,20 @@ function Terms() {
           <p>Keychn does not endorse any content submitted to the Service by any user or third party or any opinion, recommendation or advice expressed therein.</p>
           <h2>Apple-Enabled Software Applications</h2>
             <p>Keychn offers Software applications that are intended to be operated in connection with products made commercially available by Apple Inc. (“Apple”), among other platforms. With respect to Software that is made available for your use in connection with an Apple-branded product (such Software, “Apple-Enabled Software”), in addition to the other terms and conditions set forth in these Terms of Service, the following terms and conditions apply:
-            •	Keychn and you acknowledge that these Terms of Service are concluded between Keychn and you only, and not with Apple, and that as between Keychn and Apple, Keychn, not Apple, is solely responsible for the Apple-Enabled Software and the content thereof.
-            •	You may not use the Apple-Enabled Software in any manner that is in violation of or inconsistent with the Usage Rules set forth for Apple-Enabled Software in, or otherwise be in conflict with, the App Store Terms of Service.
-            •	Your license to use the Apple-Enabled Software is limited to a non-transferable license to use the Apple-Enabled Software on an iOS Product that you own or control, as permitted by the Usage Rules set forth in the App Store Terms of Service.
-            •	Apple has no obligation whatsoever to provide any maintenance or support services with respect to the Apple-Enabled Software.
-            •	Apple is not responsible for any product warranties, whether express or implied by law. In the event of any failure of the Apple-Enabled Software to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price for the Apple-Enabled Software to you, if any; and, to the maximum extent permitted by applicable law, Apple will have no other warranty obligation whatsoever with respect to the Apple-Enabled Software, or any other claims, losses, liabilities, damages, costs or expenses attributable to any failure to conform to any warranty, which will be Keychn’s sole responsibility, to the extent it cannot be disclaimed under applicable law.
-            •	Keychn and you acknowledge that Keychn, not Apple, is responsible for addressing any claims of you or any third party relating to the Apple-Enabled Software or your possession and/or use of that Apple-Enabled Software, including, but not limited to:
-            i.	product liability claims;
-            ii.	any claim that the Apple-Enabled Software fails to conform to any applicable legal or regulatory requirement; and
-            iii.	claims arising under consumer protection or similar legislation.
-            •	In the event of any third party claim that the Apple-Enabled Software or the end-user’s possession and use of that Apple-Enabled Software infringes that third party’s intellectual property rights, as between Keychn and Apple, Keychn, not Apple, will be solely responsible for the investigation, defense, settlement and discharge of any such intellectual property infringement claim.
-            •	You represent and warrant that
-            i.	you are not located in a country that is subject to a U.S. Government embargo, or that has been designated by the U.S. Government as a “terrorist supporting” country; and
-            ii.	you are not listed on any U.S. Government list of prohibited or restricted parties.
-            •	If you have any questions, complaints or claims with respect to the Apple-Enabled Software, they should be directed to Keychn as follows: email <a href="mailto:mise@keychn.com">mise@keychn.com</a>.
+            •Keychn and you acknowledge that these Terms of Service are concluded between Keychn and you only, and not with Apple, and that as between Keychn and Apple, Keychn, not Apple, is solely responsible for the Apple-Enabled Software and the content thereof.
+            •You may not use the Apple-Enabled Software in any manner that is in violation of or inconsistent with the Usage Rules set forth for Apple-Enabled Software in, or otherwise be in conflict with, the App Store Terms of Service.
+            •Your license to use the Apple-Enabled Software is limited to a non-transferable license to use the Apple-Enabled Software on an iOS Product that you own or control, as permitted by the Usage Rules set forth in the App Store Terms of Service.
+            •Apple has no obligation whatsoever to provide any maintenance or support services with respect to the Apple-Enabled Software.
+            •Apple is not responsible for any product warranties, whether express or implied by law. In the event of any failure of the Apple-Enabled Software to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price for the Apple-Enabled Software to you, if any; and, to the maximum extent permitted by applicable law, Apple will have no other warranty obligation whatsoever with respect to the Apple-Enabled Software, or any other claims, losses, liabilities, damages, costs or expenses attributable to any failure to conform to any warranty, which will be Keychn’s sole responsibility, to the extent it cannot be disclaimed under applicable law.
+            •Keychn and you acknowledge that Keychn, not Apple, is responsible for addressing any claims of you or any third party relating to the Apple-Enabled Software or your possession and/or use of that Apple-Enabled Software, including, but not limited to:
+            i.product liability claims;
+            ii.any claim that the Apple-Enabled Software fails to conform to any applicable legal or regulatory requirement; and
+            iii.claims arising under consumer protection or similar legislation.
+            •In the event of any third party claim that the Apple-Enabled Software or the end-user’s possession and use of that Apple-Enabled Software infringes that third party’s intellectual property rights, as between Keychn and Apple, Keychn, not Apple, will be solely responsible for the investigation, defense, settlement and discharge of any such intellectual property infringement claim.
+            •You represent and warrant that
+            i.you are not located in a country that is subject to a U.S. Government embargo, or that has been designated by the U.S. Government as a “terrorist supporting” country; and
+            ii.you are not listed on any U.S. Government list of prohibited or restricted parties.
+            •If you have any questions, complaints or claims with respect to the Apple-Enabled Software, they should be directed to Keychn as follows: email <a href="mailto:mise@keychn.com">mise@keychn.com</a>.
             Keychn and you acknowledge and agree that Apple, and Apple’s subsidiaries, are third party beneficiaries of these Terms of Service with respect to the Apple-Enabled Software, and that, upon your acceptance of the terms and conditions of these Terms of Service, Apple will have the right (and will be deemed to have accepted the right) to enforce these Terms of Service against you with respect to the Apple-Enabled Software as a third party beneficiary thereof.
             </p>
           <h2>Intellectual Property Rights</h2><h3>Service Content, Software and Trademarks:</h3>
@@ -79,20 +79,20 @@ function Terms() {
                 Copyright Complaints: Keychn respects the intellectual property of others, and we ask our users to do the same. If you believe that your work has been copied in a way that constitutes copyright infringement, or that your intellectual property rights have been otherwise violated, you should notify Keychn of your infringement claim in accordance with the procedure set forth below.
                 Keychn will process and investigate notices of alleged infringement and will take appropriate actions under the Digital Millennium Copyright Act (“DMCA”) and other applicable intellectual property laws with respect to any alleged or actual infringement. A notification of claimed copyright infringement should be emailed to Keychn’s Copyright Agent at <a href="mailto:mise@keychn.com">mise@keychn.com</a> (Subject line: “DMCA Takedown Request”). You may also contact us by mail or facsimile at: 14 Rec Comtal 2-2, Barcelona, SP 08003 .
                 To be effective, the notification must be in writing and contain the following information:
-                •	an electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest;
-                •	a description of the copyrighted work or other intellectual property that you claim has been infringed;
-                •	a description of where the material that you claim is infringing is located on the Service, with enough detail that we may find it on the Service;
-                •	your address, telephone number, and email address;
-                •	a statement by you that you have a good faith belief that the disputed use is not authorized by the copyright or intellectual property owner, its agent, or the law;
-                •	a statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright or intellectual property owner or authorized to act on the copyright or intellectual property owner’s behalf.
+                •an electronic or physical signature of the person authorized to act on behalf of the owner of the copyright or other intellectual property interest;
+                •a description of the copyrighted work or other intellectual property that you claim has been infringed;
+                •a description of where the material that you claim is infringing is located on the Service, with enough detail that we may find it on the Service;
+                •your address, telephone number, and email address;
+                •a statement by you that you have a good faith belief that the disputed use is not authorized by the copyright or intellectual property owner, its agent, or the law;
+                •a statement by you, made under penalty of perjury, that the above information in your Notice is accurate and that you are the copyright or intellectual property owner or authorized to act on the copyright or intellectual property owner’s behalf.
                 </p>
           <h2>Claim Copyright Infringement</h2>
             <h3>Counter-Notice: </h3>
             <p>If you believe that your User Content that was removed (or to which access was disabled) is not infringing, or that you have the authorization from the copyright owner, the copyright owner’s agent, or pursuant to the law, to upload and use the content in your User Content, you may send a written counter-notice containing the following information to the Copyright Agent:
-            •	your physical or electronic signature;
-            •	identification of the content that has been removed or to which access has been disabled and the location at which the content appeared before it was removed or disabled;
-            •	a statement that you have a good faith belief that the content was removed or disabled as a result of mistake or a misidentification of the content; and
-            •	your name, address, telephone number, and email address, a statement that you consent to the jurisdiction of the federal court located within Northern District of California and a statement that you will accept service of process from the person who provided notification of the alleged infringement.
+            •your physical or electronic signature;
+            •identification of the content that has been removed or to which access has been disabled and the location at which the content appeared before it was removed or disabled;
+            •a statement that you have a good faith belief that the content was removed or disabled as a result of mistake or a misidentification of the content; and
+            •your name, address, telephone number, and email address, a statement that you consent to the jurisdiction of the federal court located within Northern District of California and a statement that you will accept service of process from the person who provided notification of the alleged infringement.
             If a counter-notice is received by the Copyright Agent, Keychn will send a copy of the counter-notice to the original complaining party informing that person that it may replace the removed content or cease disabling it in 10 business days. Unless the copyright owner files an action seeking a court order against the content provider, member or user, the removed content may be replaced, or access to it restored, in 10 to 14 business days or more after receipt of the counter-notice, at our sole discretion.
             Repeat Infringer Policy: In accordance with and other applicable law, Keychn has adopted a policy of terminating, in appropriate circumstances and at Keychn's sole discretion, users who are deemed to be repeat infringers. Keychn may also at its sole discretion limit access to the Service and/or terminate the memberships of any users who infringe any intellectual property rights of others, whether or not there is any repeat infringement.
             For more information on other content removal processes supported by Keychn, please visit our privacy policy, located at https://Keychn.com/privacy .

@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default class SecondaryHeader extends React.Component {
-  render() {
+  render () {
     return (
       <div className='secondary-header'>
         <h1>Learn with chefs</h1>

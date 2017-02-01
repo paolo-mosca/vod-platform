@@ -1,4 +1,4 @@
-export function post(url, data) {
+export function post (url, data) {
   return fetch(url, {
     method: 'POST',
     credentials: 'include',
@@ -9,7 +9,7 @@ export function post(url, data) {
   })
 }
 
-export function get(url) {
+export function get (url) {
   return fetch(url, {
     credentials: 'include'
   })

@@ -10,11 +10,10 @@ import {connect} from 'react-redux'
   }
 })
 export default class RecipeList extends React.Component {
-  componentDidMount() {
+  componentDidMount () {
     this.props.dispatch(fetchRecipes())
   }
-  render() {
-    console.log(this.props.newRecipes)
+  render () {
     return (
       <div className="container grid subsection-recipes">
         {this.props.recipes
@@ -28,5 +27,5 @@ export default class RecipeList extends React.Component {
   }
 }
 RecipeList.propTypes = {
-  recipes:PropTypes.array.isRequired
+  recipes: React.PropTypes.array.isRequired,
 }

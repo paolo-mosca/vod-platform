@@ -12,4 +12,8 @@ function RecipeFromAPI (props) {
     : <div>Recipe From KEYCHN API: {puke(props)}</div>
 }
 
+RecipeFromAPI.propTypes = {
+  isLoading: React.PropTypes.bool
+}
+
 export default RecipeFromAPI

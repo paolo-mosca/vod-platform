@@ -2,8 +2,7 @@ import React, { PropTypes } from 'react'
 
 // import Moment from 'react-moment'
 
-
-function RecipeComponent(props) {
+function RecipeComponent (props) {
   return (
     <div className='recipe-component'>
       <div className='recipe-video-preview-holder'>
@@ -35,7 +34,7 @@ function RecipeComponent(props) {
   )
 }
 
-RecipeComponent.propTypes={
+RecipeComponent.propTypes = {
   videoThumbnail: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,

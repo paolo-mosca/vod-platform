@@ -1,7 +1,7 @@
 import React from 'react'
-import {Link } from 'react-router'
+import { Link } from 'react-router'
 
-function Footer() {
+function Footer () {
   return (
     <footer className='primary-footer'>
       <div className='group container nav-wrapper'>

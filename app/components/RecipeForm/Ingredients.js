@@ -9,13 +9,13 @@ import {getSelectOptions} from '../../utils/form'
   return {ingredientOptions: getSelectOptions(state.ingredients, 'id')}
 })
 export default class Ingredients extends Component {
-  componentDidMount() {
+  componentDidMount () {
     const {fields} = this.props
     if (fields.length === 0) {
       fields.push({})
     }
   }
-  render() {
+  render () {
     const {fields, ingredientOptions} = this.props
     return (
       <div>

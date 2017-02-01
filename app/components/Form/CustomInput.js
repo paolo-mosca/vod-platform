@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import Select from 'react-select'
 import classnames from 'classnames'
 
-function formatSelectValue(data) {
+function formatSelectValue (data) {
   if (!Array.isArray(data)) {
     return data && data.value
   }
   return data.map((opt) => opt.value)
 }
 
-export default function CustomInput({
+export default function CustomInput ({
   input,
   label,
   helpText,
@@ -21,16 +21,15 @@ export default function CustomInput({
   className,
   meta: {touched, error}
 }) {
-  const field = (type==='select') ?
-    <Select
+  const field = (type === 'select')
+    ? <Select
       {...input}
       placeholder={placeholder}
       options={options}
       multi={multi}
-      onChange={(option) => { input.onChange(formatSelectValue(option))} }
+      onChange={(option) => { input.onChange(formatSelectValue(option)) } }
       onBlur={(option) => input.onChange(formatSelectValue(option))} />
-    :
-    <input {...input} type={type || 'text'} className='form-control' placeholder={placeholder} readOnly={readOnly} />
+    : <input {...input} type={type || 'text'} className='form-control' placeholder={placeholder} readOnly={readOnly} />
   return (
     <div className={classnames('form-group', className)}>
       <label className='col-xs-2'>{label}</label>

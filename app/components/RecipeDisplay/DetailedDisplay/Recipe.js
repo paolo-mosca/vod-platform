@@ -8,9 +8,8 @@ import StepList from './StepList'
 import EquipmentList from './EquipmentList'
 import SkillsLearntList from './SkillsLearntList'
 
-//props.recipe.name ..
+// props.recipe.name ..
 function Recipe ({ recipe }) {
-  console.log('WHHHHHHHH', recipe);
   return (
     <section className='section-recipe-details grid container'>
       <RecipeComponentDetailed {...recipe}/>
@@ -18,23 +17,23 @@ function Recipe ({ recipe }) {
         <section className= 'basic-recipe-information'>
           <TagList {...recipe}/>
           <LearningPathList {...recipe}/>
-          <div class='course-type'>
+          <div className='course-type'>
             <h5>Course Type: </h5>
             <p>{recipe.courseType}</p>
           </div>
-          <div class='length'>
+          <div className='length'>
             <h5>Estimated time: </h5>
             <p>{recipe.length} minutes</p>
           </div>
-          <div class='difficulty'>
+          <div className='difficulty'>
             <h5>Difficulty: </h5>
             <p>{recipe.difficulty}</p>
           </div>
-          <div class='servings'>
+          <div className='servings'>
             <h5>Servings: </h5>
             <p>{recipe.servings} people</p>
           </div>
-          <div class='price'>
+          <div className='price'>
             <h5>Price: </h5>
             <p>{recipe.price} €</p>
           </div>
@@ -62,7 +61,7 @@ Recipe.propTypes = {
     ingredients: PropTypes.array.isRequired,
     steps: PropTypes.array.isRequired,
     equipment: PropTypes.array.isRequired,
-    skillsLearnt: PropTypes.array.isRequired,
+    skillsLearnt: PropTypes.array.isRequired
   })
 }
 export default Recipe

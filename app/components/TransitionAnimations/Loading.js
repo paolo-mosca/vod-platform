@@ -14,28 +14,28 @@ const styles = {
     textAlign: 'center',
     position: 'absolute',
     width: '100%',
-    marginTop: '30px',
+    marginTop: '30px'
   }
 }
 
 var Loading = React.createClass({
   propTypes: {
     text: PropTypes.string,
-    speed: PropTypes.number,
+    speed: PropTypes.number
   },
-  getDefaultProps() {
+  getDefaultProps () {
     return {
       text: 'Loading',
       speed: 300
     }
   },
-  getInitialState() {
-    this.originalText = this.props.text;
+  getInitialState () {
+    this.originalText = this.props.text
     return {
       text: this.originalText
     }
   },
-  componentDidMount() {
+  componentDidMount () {
     var stopper = this.originalText + '...'
     this.interval = setInterval(() => {
       if (this.state.text === stopper) {
@@ -49,10 +49,10 @@ var Loading = React.createClass({
       }
     }, this.props.speed)
   },
-  componentWillUnmount() {
+  componentWillUnmount () {
     window.clearInterval(this.interval)
   },
-  render() {
+  render () {
     return (
       <div style={styles.container}>
         <p style={styles.content}>{this.state.text}</p>

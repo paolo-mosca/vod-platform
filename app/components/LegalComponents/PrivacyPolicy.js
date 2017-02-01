@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PrivacyPolicy() {
+function PrivacyPolicy () {
   return (
     <section className='subsection-recipes grid container'>
       <section className='terms'>

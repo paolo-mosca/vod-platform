@@ -12,4 +12,9 @@ function RecipeOverview (props) {
     </div>
   )
 }
+
+RecipeOverview.propTypes = {
+  id: React.PropTypes.string.isRequired
+}
+
 export default RecipeOverview

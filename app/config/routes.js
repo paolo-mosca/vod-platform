@@ -22,7 +22,8 @@ const routes = (
       <Route path='recipe-details/:id'>
         <IndexRoute component={(props) => {
           const recipe = preload.recipes.filter((recipe) => props.params.id === recipe.id)
-            return <Recipe recipe={recipe[0]} {...props} /> }}
+          return <Recipe recipe={recipe[0]} {...props} />
+        }}
         />
       </Route>
       {/* <Route path='/recipe-details/:id' component={RecipeContainer}></Route> //once the API is properly connected  */}

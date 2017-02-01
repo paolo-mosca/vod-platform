@@ -3,18 +3,22 @@ import RecipeFromAPI from '../components/RecipeDisplay/DetailedDisplay/RecipeFro
 import keychnRecipeHelper from '../utils/keychn_api/keychnRecipeHelper'
 
 var RecipeContainer = React.createClass({
+  propTypes: {
+    keychnRecipeHelper: React.PropTypes.func.isRequired,
+    recipe: React.PropTypes.object.isRequired
+  },
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },
-  getInitialState() {
+  getInitialState () {
     return {
       isLoading: true,
-      recipe: {},
+      recipe: {}
     }
   },
-  componentDidMount() {
-    const clickedRecipe = this.props. // WHAT ??? should get the id from the recipe clicked.
-    keychnRecipeHelper.getRecipe()
+  componentDidMount () {
+    const clickedRecipe = this.props // WHAT ??? should get the id from the recipe clicked.
+    .keychnRecipeHelper.getRecipe()
       .then((clickedRecipe) => { // Assumption: the object return is an object
         this.setState({
           isLoading: false,
@@ -22,7 +26,7 @@ var RecipeContainer = React.createClass({
         })
       })
   },
-  render() {
+  render () {
     return (
       <RecipeFromAPI
         isLoading={this.state.isLoading}

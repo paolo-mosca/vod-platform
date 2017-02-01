@@ -1,19 +1,19 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import CustomInput from '../Form/CustomInput'
-import {required, email} from '../Form/validations'
+import { required, email } from '../Form/validations'
 import { Field, reduxForm, SubmissionError } from 'redux-form'
-import {register} from '../../data/user'
-import {browserHistory} from 'react-router'
+import { register } from '../../data/user'
+import { browserHistory } from 'react-router'
 
 @reduxForm({
   form: 'register'
 })
 export default class RegisterForm extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.submit = this.submit.bind(this)
   }
-  submit(values) {
+  submit (values) {
     this.props.dispatch(register(values))
       .then((res) => {
         if (res.status === 200) {
@@ -21,7 +21,7 @@ export default class RegisterForm extends React.Component {
         }
       })
   }
-  render() {
+  render () {
     const {submitting, handleSubmit} = this.props
     return (
       <form onSubmit={handleSubmit(this.submit)}>

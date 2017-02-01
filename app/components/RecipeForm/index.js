@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Field, FieldArray, reduxForm,  SubmissionError } from 'redux-form'
+import { Field, FieldArray, reduxForm, SubmissionError } from 'redux-form'
 import CustomInput from '../Form/CustomInput'
 import Ingredients from './Ingredients'
 import Steps from './Steps'
@@ -21,24 +21,24 @@ import {browserHistory} from 'react-router'
   }
 })
 @reduxForm({
-  form: 'recipeCreateForm',
+  form: 'recipeCreateForm'
 })
 export default class RecipeCreateForm extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.submit = this.submit.bind(this)
   }
-  componentDidMount() {
+  componentDidMount () {
     const {routeParams: {slug}, dispatch} = this.props
     dispatch(fetchRecipeInfo())
     if (slug) {
       dispatch(fetchRecipe(slug))
     }
   }
-  preventSubmit(e) {
+  preventSubmit (e) {
     e.preventDefault()
   }
-  submit(values) {
+  submit (values) {
     const {routeParams: {slug}, dispatch} = this.props
     dispatch(createOrUpdateRecipe(values, slug))
       .then(() => {
@@ -212,7 +212,7 @@ export default class RecipeCreateForm extends Component {
              <input
                className='btn btn-primary'
                type='submit'
-               value={slug ? 'Update':  'Add New Recipe'}
+               value={slug ? 'Update' : 'Add New Recipe'}
                disabled={submitting}
                onSubmit={handleSubmit(this.submit)} />
           </div>

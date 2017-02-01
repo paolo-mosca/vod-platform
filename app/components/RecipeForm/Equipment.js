@@ -6,17 +6,16 @@ import {connect} from 'react-redux'
 import {getSelectOptions} from '../../utils/form'
 
 @connect((state) => {
-  console.log(state.equipment)
   return {equipmentOptions: getSelectOptions(state.equipment, 'id')}
 })
 export default class Equipment extends Component {
-  componentDidMount() {
+  componentDidMount () {
     const {fields} = this.props
     if (fields.length === 0) {
       fields.push({})
     }
   }
-  render() {
+  render () {
     const {fields, equipmentOptions} = this.props
     return (
       <div>
