@@ -1,6 +1,6 @@
 import React from 'react'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
-import Main from '../components/Main'
+import Main from '../containers/Main/Main'
 import RecipeList from '../components/RecipeList/RecipeList'
 import Recipe from '../components/Recipe/Recipe'
 import Terms from '../components/LegalComponents/Terms'

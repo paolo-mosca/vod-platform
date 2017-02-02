@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from './HeaderFooter/Header'
-import Footer from './HeaderFooter/Footer'
+import { Header, Footer } from 'components'
+import { connect } from 'react-redux'
 
 const Main = React.createClass({
   propTypes: {
@@ -8,12 +8,12 @@ const Main = React.createClass({
     children: React.PropTypes.element
   },
   render () {
-    const {location} = this.props
+    const {location, children} = this.props
     return (
       <div className='main-container'>
         <Header location={location}/>
         <div className='container'>
-          {this.props.children}
+          {children}
         </div>
         <Footer />
       </div>
