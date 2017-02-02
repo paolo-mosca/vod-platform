@@ -1,10 +1,15 @@
 
 const SET_SKILLSLEARNT = 'SET_SKILLSLEARNT'
 
+//Actions
 export function setSkillsLearnt (skillsLearnt) {
-  return {type: SET_SKILLSLEARNT, payload: {skillsLearnt}}
+  return {
+    type: SET_SKILLSLEARNT,
+    payload: {skillsLearnt}
+  }
 }
 
+//Reducers
 export default function skillsLearnt (state = [], action) {
   const {type, payload} = action
   switch (type) {

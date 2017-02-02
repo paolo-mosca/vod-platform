@@ -8,17 +8,24 @@ import {setSkillsLearnt} from './skillsLearnt'
 import { SubmissionError } from 'redux-form'
 import _ from 'lodash'
 import {get} from './utils/network'
+
 // constants
 const SET_RECIPES = 'SET_RECIPES'
 const ADD_RECIPE = 'ADD_RECIPE'
 
-// actions
+// Actions
 export function setRecipes (recipes) {
-  return {type: SET_RECIPES, payload: {recipes}}
+  return {
+    type: SET_RECIPES,
+    payload: {recipes}
+  }
 }
 
 export function addRecipe (recipe) {
-  return {type: ADD_RECIPE, payload: {recipe}}
+  return {
+    type: ADD_RECIPE,
+    payload: {recipe}
+  }
 }
 
 export function fetchRecipes () {
@@ -89,6 +96,7 @@ function filterDuplicateRecipes (recipes) {
   return _.uniq(recipes, 'id')
 }
 
+// Reducers
 export default function recipes (state = [], action) {
   const {type, payload} = action
   switch (type) {

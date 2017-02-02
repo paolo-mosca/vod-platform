@@ -2,7 +2,10 @@
 const SET_LEARNING_PATHS = 'SET_LEARNING_PATHS'
 
 export function setLearningPaths (learningPaths) {
-  return {type: SET_LEARNING_PATHS, payload: {learningPaths}}
+  return {
+    type: SET_LEARNING_PATHS,
+    payload: {learningPaths}
+  }
 }
 
 export default function learningPaths (state = [], action) {
