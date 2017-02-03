@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Field} from 'redux-form'
-import CustomInput from '../Form/CustomInput'
-import {required, url} from '../Form/validations'
+import CustomInput from '../../Form/CustomInput'
+import {required, url} from '../../Form/validations'
 
 export default class Steps extends Component {
   componentDidMount () {

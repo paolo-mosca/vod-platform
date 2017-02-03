@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import {Field} from 'redux-form'
-import CustomInput from '../Form/CustomInput'
-import {required} from '../Form/validations'
+import CustomInput from '../../Form/CustomInput'
+import {required} from '../../Form/validations'
 import {connect} from 'react-redux'
-import {getSelectOptions} from '../../utils/form'
+import {getSelectOptions} from '../../../utils/form'
 
 @connect((state) => {
   return {skillsLearntOptions: getSelectOptions(state.skilsLearnt, 'id')}
