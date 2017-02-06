@@ -6,9 +6,9 @@ import Steps from './SubComponents/Steps'
 import Equipment from './SubComponents/Equipment'
 import Skills from './SubComponents/SkillsLearnt'
 import {required, number, url} from '../Form/validations'
-import {fetchRecipeInfo, createOrUpdateRecipe, fetchRecipe, recipeBySlug} from '../../data/recipes'
+import {fetchRecipeInfo, createOrUpdateRecipe, fetchRecipe, recipeBySlug} from '../../../data/recipes'
 import {connect} from 'react-redux'
-import {getSelectOptions} from '../../utils/form'
+import {getSelectOptions} from '../../../utils/form'
 import {browserHistory} from 'react-router'
 
 @connect((state, {routeParams: {slug}}) => {

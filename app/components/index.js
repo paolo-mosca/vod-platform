@@ -1,9 +1,3 @@
-export RegisterForm from './Auth/RegisterForm'
-export SignInForm from './Auth/SignInForm'
-
-export CustomInput from './Form/CustomInput'
-export validations from './Form/validations' // is a component? I think is a utils
-
 export Header from './HeaderFooter/Header'
 export Footer from './HeaderFooter/Footer'
 export SecondaryHeader from './HeaderFooter/SecondaryHeader'
@@ -26,9 +20,3 @@ export Recipe from './Recipe/Recipe'
 export RecipeList from './RecipeList/RecipeList'
 // export RecipeListFromAPI from './SubComponents/RecipeListFromAPI'
 // export RecipeOverview from './SubComponents/RecipeOverview'
-
-// export Equipment from './RecipeForm/Equipment'
-export RecipeCreateForm from './RecipeForm/index'
-// export Ingredients from './RecipeForm/Ingredients'
-// export SkillsLearnt from './RecipeForm/SkillsLearnt'
-// export Steps from './RecipeForm/Steps'
