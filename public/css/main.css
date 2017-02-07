@@ -342,9 +342,20 @@ a {
 .keychn-logo {
   width: 10%;
   min-width: 85px;
+  vertical-align: middle;
+  float: left;
+}
+
+@media only screen and (max-width : 490px) {
+  .keychn-logo {
+    display: block;
+    float: none;
+    margin: 0 auto;
+  }
 }
 .menu-link, .menu-link li {
  display: inline-block;
+ padding: 0.5em;
 }
 
 .secondary-header {
@@ -358,6 +369,7 @@ a {
   background-color: tomato;
   padding: 15px 0;
 }
+
 .secondary-header h1, .secondary-header p {
   color: white;
 }
@@ -385,6 +397,12 @@ a {
   font-weight: lighter;;
   width: 250px;
   border-color: #e7e7e7;
+}
+
+@media only screen and (max-width : 470px) {
+  #email-value  {
+    margin-bottom: 5px;
+  }
 }
 #submit-email {
   color: black;
