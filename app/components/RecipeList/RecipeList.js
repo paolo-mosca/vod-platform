@@ -14,9 +14,10 @@ export default class RecipeList extends React.Component {
     this.props.dispatch(fetchRecipes())
   }
   render () {
+    const {recipes} = this.props
     return (
       <div className="container grid subsection-recipes">
-        {this.props.recipes
+        {recipes
           .map((recipe) => {
             return (
               <RecipeOverview {...recipe} key={recipe.id} />
