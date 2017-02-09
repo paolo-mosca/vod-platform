@@ -1,5 +1,4 @@
 import React, { PropTypes, Component } from 'react'
-import { View, Text } from 'react-native'
 
 export default class SearchForm extends Component {
   constructor(props) {
@@ -8,8 +7,18 @@ export default class SearchForm extends Component {
       searchText: ''
     }
   }
-  // static propTypes = {}
-  // state = {}
+  updateSearchInput(event) {
+    //This function will be called when the search input changes
+    this.setState({
+      searchText: event.target.value
+    })
+  }
+  submitForm(event) {
+    //prevent the form from reloading the entire page
+    event.preventDefault()
+    // call the callback with the search value
+    this.props.onSubmit(this.state.searchText)
+  }
   render () {
     let searchInputClasses =['searchInput']
     // update the class array if the state is visible
@@ -18,17 +27,24 @@ export default class SearchForm extends Component {
     }
 
     return (
-      <input
-        type='search'
-        className={searchInputClasses}
-        placeholder='Search'/>
+      <form onSubmit={this.submitForm.bind(this)}>
+        <input
+          type='search'
+          value={this.state.searchText}
+          className={searchInputClasses}
+          onChange={this.updateSearchInput.bind(this)}
+          placeholder='Search...'/>
+      </form>
+
     )
   }
 }
 
 SearchForm.propTypes = {
-  searchVisible: PropTypes.bool
+  searchVisible: PropTypes.bool,
+  onSubmit: PropTypes.func.isRequired
 }
 SearchForm.defaultProps = {
-  searchVisible: false
+  searchVisible: false,
+  onSubmit: () => {} //prevent explosions
 }
