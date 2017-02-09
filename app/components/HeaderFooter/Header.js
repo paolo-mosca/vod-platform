@@ -21,6 +21,11 @@ class Header extends Component {
   handleSearch(val) {
 
   }
+
+  submitForm(val) {
+    this.props.onSearch(val)
+  }
+  
   render () {
     let searchInputClasses =['searchInput']
     // update the class array if the state is visible
@@ -57,7 +62,8 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  location: PropTypes.object
+  location: PropTypes.object,
+  onSearch: PropTypes.func
 }
 
 export default Header
