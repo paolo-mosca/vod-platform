@@ -1,6 +1,6 @@
 import React from 'react'
-import RecipeListFromAPI from '../components/RecipeList/SubComponents/RecipeListFromAPI'
-import keychnRecipeOverviewHelper from '../utils/keychn_api/keychnRecipeOverviewHelper'
+import {RecipeListFromAPI} from 'components'
+import keychnRecipeOverviewHelper from 'utils/keychn_api/keychnRecipeOverviewHelper'
 
 var RecipeListContainer = React.createClass({
   contextTypes: {

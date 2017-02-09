@@ -6,17 +6,22 @@ export default class SearchForm extends Component {
     this.state = {
       searchText: ''
     }
+    this.updateSearchInput = this.updateSearchInput.bind(this)
+    this.submitForm = this.submitForm.bind(this)
   }
+
   updateSearchInput(event) {
     //This function will be called when the search input changes
     this.setState({
       searchText: event.target.value
     })
   }
+
   submitForm(event) {
     //prevent the form from reloading the entire page
     event.preventDefault()
     // call the callback with the search value
+    console.log(this.state.searchText);
     this.props.onSubmit(this.state.searchText)
   }
   render () {
@@ -27,15 +32,14 @@ export default class SearchForm extends Component {
     }
 
     return (
-      <form onSubmit={this.submitForm.bind(this)}>
+      <form onSubmit={this.submitForm}>
         <input
           type='search'
           value={this.state.searchText}
           className={searchInputClasses}
-          onChange={this.updateSearchInput.bind(this)}
-          placeholder='Search...'/>
+          onChange={this.updateSearchInput}
+          placeholder='Search ...'/>
       </form>
-
     )
   }
 }

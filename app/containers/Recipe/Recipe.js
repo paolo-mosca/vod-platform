@@ -1,6 +1,6 @@
 import React from 'react'
-import RecipeFromAPI from '../components/Recipe/SubComponents/RecipeFromAPI'
-import keychnRecipeHelper from '../utils/keychn_api/keychnRecipeHelper'
+import {RecipeFromAPI} from 'components'
+import keychnRecipeHelper from 'utils/keychn_api/keychnRecipeHelper'
 
 var RecipeContainer = React.createClass({
   propTypes: {
