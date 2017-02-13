@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import CustomInput from '../Form/CustomInput'
 import {required, email} from '../Form/validations'
 import { Field, reduxForm, SubmissionError } from 'redux-form'
-import {signIn} from '../../data/user'
+import {signIn} from '../../redux/modules/user'
 import {browserHistory} from 'react-router'
 
 @reduxForm({

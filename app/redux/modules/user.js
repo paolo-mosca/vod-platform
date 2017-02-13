@@ -1,4 +1,4 @@
-import {post, get} from './utils/network'
+import {post, get} from '../utils/network'
 import {browserHistory} from 'react-router'
 
 const UPDATE_USER = 'UPDATE_USER'

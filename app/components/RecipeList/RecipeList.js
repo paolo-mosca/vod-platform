@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
 import RecipeOverview from './SubComponents/RecipeOverview'
-import {fetchRecipes} from '../../data/recipes'
+import {fetchRecipes} from '../../redux/modules/recipes'
 import {connect} from 'react-redux'
 
 @connect((state) => {

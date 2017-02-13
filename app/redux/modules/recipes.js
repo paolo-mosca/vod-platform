@@ -7,7 +7,7 @@ import {setEquipment} from './equipment'
 import {setSkillsLearnt} from './skillsLearnt'
 import { SubmissionError } from 'redux-form'
 import _ from 'lodash'
-import {get} from './utils/network'
+import {get} from '../utils/network'
 
 // constants
 const SET_RECIPES = 'SET_RECIPES'
