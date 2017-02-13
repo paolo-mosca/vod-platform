@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
-import reducer from './reducers'
+import reducer from './modules/reducers'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
@@ -10,8 +10,8 @@ export default function configureStore (initialState) {
   ))
 
   if (module.hot) {
-    module.hot.accept('./reducers', () =>
-      store.replaceReducer(require('./reducers').default)
+    module.hot.accept('./modules/reducers', () =>
+      store.replaceReducer(require('./modules/reducers').default)
     )
   }
 
