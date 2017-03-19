@@ -8,10 +8,10 @@ import Helmet from 'react-helmet'
 import { APP_NAME } from './config'
 import { HOME_PAGE_ROUTE, HELLO_PAGE_ROUTE, HELLO_ASYNC_PAGE_ROUTE } from './routes'
 import Nav from './components/Nav'
-import HomePage from './containers/page/HomePage'
-import HelloPage from './containers/page/HelloPage'
-import HelloAsyncPage from './containers/page/HelloAsyncPage'
-import NotFoundPage from './containers/page/NotFoundPage'
+import HomePage from './containers/pages/HomePage'
+import HelloPage from './containers/pages/HelloPage'
+import HelloAsyncPage from './containers/pages/HelloAsyncPage'
+import NotFoundPage from './containers/pages/NotFoundPage'
 
 const App = () =>
   <div>
