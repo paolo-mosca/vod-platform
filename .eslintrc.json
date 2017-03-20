@@ -1,0 +1,19 @@
+{
+  "env": {
+    "jest": true,
+    "browser": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended"
+  ],
+  "plugins": [
+    "flowtype"
+  ],
+  "rules": {
+    "semi": [2, "never"],
+    "no-unexpected-multiline": 2,
+    "no-param-reassign": ["error", { "ignorePropertyModificationsFor": ["req"] }],
+    "no-underscore-dangle": [2, { "allow": ["_id"] }]
+  }
+}
