@@ -2,19 +2,18 @@
 
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunkMiddleware from 'redux-thunk'
-import Immutable from 'immutable'
 
-import helloReducer from '../shared/reducers/hello'
+import recipesReducer from '../shared/reducers/recipesReducer'
 
 const initStore = (plainPartialState: ?Object) => {
   const preloadedState = plainPartialState ? {} : undefined
 
-  if (plainPartialState && plainPartialState.hello) {
+  if (plainPartialState && plainPartialState.recipes) {
     // flow-disable-next-line
-    preloadedState.hello = helloReducer(undefined, {})
-      .merge(Immutable.fromJS(plainPartialState.hello))
+    preloadedState.recipes = recipesReducer(undefined, {})
+      .merge(plainPartialState.recipes)
   }
-  return createStore(combineReducers({ hello: helloReducer }),
+  return createStore(combineReducers({ recipes: recipesReducer }),
     preloadedState, applyMiddleware(thunkMiddleware))
 }
 

@@ -7,11 +7,11 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
+import CreateLogger from 'redux-logger'
 import { BrowserRouter } from 'react-router-dom'
 import { AppContainer } from 'react-hot-loader'
-import Immutable from 'immutable'
 
-import helloReducer from '../shared/reducers/hello'
+import recipesReducer from '../shared/reducers/recipesReducer'
 import { APP_SELECTOR } from '../shared/config'
 import { isProd } from '../shared/util'
 import App from '../shared/app'
@@ -21,10 +21,15 @@ const composeEnhancers = (isProd ? null : window.__REDUX_DEVTOOLS_EXTENSION_COMP
 const preloadedState = window.__PRELOADED_STATE__
 /* eslint-disable no-underscore-dangle */
 
+const loggerMiddleware = new CreateLogger({
+  predicate: () => !isProd,
+  collapsed: true,
+})
+
 const store = createStore(
-  combineReducers({ hello: helloReducer }),
-  { hello: Immutable.fromJS(preloadedState.hello) },
-  composeEnhancers(applyMiddleware(thunkMiddleware)))
+  combineReducers({ recipes: recipesReducer }),
+  { recipes: preloadedState.recipes },
+  composeEnhancers(applyMiddleware(thunkMiddleware, loggerMiddleware)))
 
 const render = (AppComponent, reduxStore) =>
   ReactDOM.render( // eslint-disable-line react/no-render-return-value

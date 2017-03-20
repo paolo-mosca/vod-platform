@@ -6,24 +6,19 @@ import { Route } from 'react-router-dom'
 import Helmet from 'react-helmet'
 
 import { APP_NAME } from './config'
-import { HOME_PAGE_ROUTE, HELLO_PAGE_ROUTE, HELLO_ASYNC_PAGE_ROUTE } from './routes'
-import Nav from './components/Nav'
-import HomePage from './containers/pages/HomePage'
-import HelloPage from './containers/pages/HelloPage'
-import HelloAsyncPage from './containers/pages/HelloAsyncPage'
+import routes from './routes'
+import RecipeListPage from './containers/pages/RecipeListPage'
 import NotFoundPage from './containers/pages/NotFoundPage'
 
 const App = () =>
-  <div>
+  <div className="main-container">
     <Helmet titleTemplate={`%s | ${APP_NAME}`} defaultTitle={APP_NAME} />
-    <h1>{ APP_NAME }</h1>
-    <Nav />
-    <Switch>
-      <Route exact path={HOME_PAGE_ROUTE} render={() => <HomePage />} />
-      <Route path={HELLO_PAGE_ROUTE} render={() => <HelloPage />} />
-      <Route path={HELLO_ASYNC_PAGE_ROUTE} render={() => <HelloAsyncPage />} />
-      <Route component={() => <NotFoundPage />} />
-    </Switch>
+    <div className="container">
+      <Switch>
+        <Route exact path={routes.RECIPLE_LIST_PAGE} render={() => <RecipeListPage />} />
+        <Route component={() => <NotFoundPage />} />
+      </Switch>
+    </div>
   </div>
 
 export default App

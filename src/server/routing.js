@@ -1,26 +1,13 @@
 // @flow
 
-import { helloEndpointRoute, HOME_PAGE_ROUTE, HELLO_PAGE_ROUTE,
-  HELLO_ASYNC_PAGE_ROUTE } from '../shared/routes'
-import { helloEndpoint, homePage, helloPage, helloAsyncPage } from './controller'
+import routes from '../shared/routes'
+import { homePage } from './controller'
 
 import renderApp from './render-app'
 
 const routing = (app: Object) => {
-  app.get(helloEndpointRoute(), (req, res) => {
-    res.json(helloEndpoint(req.params.num))
-  })
-
-  app.get(HOME_PAGE_ROUTE, (req, res) => {
+  app.get(routes.RECIPE_LIST_PAGE, (req, res) => {
     res.send(renderApp(req.url, homePage()))
-  })
-
-  app.get(HELLO_PAGE_ROUTE, (req, res) => {
-    res.send(renderApp(req.url, helloPage()))
-  })
-
-  app.get(HELLO_ASYNC_PAGE_ROUTE, (req, res) => {
-    res.send(renderApp(req.url, helloAsyncPage()))
   })
 
   app.get('/500', () => {
