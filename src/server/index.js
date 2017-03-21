@@ -20,11 +20,11 @@ mongoose.connect(serverConfig.dbUrl)
 //   seed()
 // }
 
-pageRouter(app)
 app.use(STATIC_PATH, express.static('dist'))
 app.use(STATIC_PATH, express.static('public'))
 app.use('/api', api)
 app.use('/api', middlewares.notFound)
+pageRouter(app)
 app.use(middlewares.error)
 
 // avoid crash on test watch mode
