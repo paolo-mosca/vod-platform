@@ -3,7 +3,7 @@ import serverLogger from './serverLogger'
 import serverConfig from '../serverConfig'
 
 // models
-// import Categories from '../api/categories/categoriesModel'
+import Categories from '../api/categories/categoriesModel'
 import Tags from '../api/tags/tagsModel'
 // import Equipments from '../api/equipments/equipmentModel'
 // import Chefs from '../api/chefs/chefsModel'
@@ -16,9 +16,9 @@ import Users from '../api/users/usersModel'
 import auth from '../auth'
 
 // data
-import { users, tags, skills, ingredients } from './seedData'
+import { users, tags, skills, ingredients, categories } from './seedData'
 
-const Models = [Users, Tags, Skills, Ingredients]
+const Models = [Users, Tags, Skills, Ingredients, Categories]
 
 // init
 serverLogger.log(`Seeding ${serverConfig.env} DB ...`)
@@ -49,6 +49,12 @@ const seedTags = () => {
   return Promise.all(promises)
 }
 
+const seedCategories = () => {
+  serverLogger.log('Seeding categories ...')
+  const promises = categories.map(c => Categories.create(c))
+  return Promise.all(promises)
+}
+
 const seedSkills = () => {
   serverLogger.log('Seeding skills ...')
   const promises = skills.map(s => Skills.create(s))
@@ -72,6 +78,7 @@ const seed = () => {
   cleanDB()
     .then(seedSkills)
     .then(seedTags)
+    .then(seedCategories)
     .then(seedIngredients)
     .then(seedUsers)
     .then(logSeedSuccess)

@@ -18,6 +18,12 @@ export default {
   updateSkillEndpoint: (id: string) => `/api/skills/${id}`,
   deleteSkillEndpoint: (id: string) => `/api/skills/${id}`,
 
+  fetchCategoriesEndpoint: () => '/api/categories/',
+  createCategoryEndpoint: () => '/api/categories/',
+  fetchCategoryEndpoint: (id: string) => `/api/categories/${id}`,
+  updateCategoryEndpoint: (id: string) => `/api/categories/${id}`,
+  deleteCategoryEndpoint: (id: string) => `/api/categories/${id}`,
+
   fetchIngredientsEndpoint: () => '/api/ingredients/',
   createIngredientEndpoint: () => '/api/ingredients/',
   fetchIngredientEndpoint: (id: string) => `/api/ingredients/${id}`,
