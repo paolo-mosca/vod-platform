@@ -1,36 +1,36 @@
-import Users from './usersModel'
+import Equipments from './equipmentsModel'
 
 const getList = (req, res, next) => {
-  Users.find()
-    .then(users => res.json(users))
+  Equipments.find()
+    .then(equipments => res.json(equipments))
     .catch(next)
 }
 
 const getItem = (req, res, next) => {
-  Users.findById(req.params.id)
-    .then(user => res.json(user))
+  Equipments.findById(req.params.id)
+    .then(equipment => res.json(equipment))
     .catch(next)
 }
 
 const createItem = (req, res, next) => {
-  Users.create(req.body)
-    .then(user => res.status(201).send(user))
+  Equipments.create(req.body)
+    .then(equipment => res.status(201).send(equipment))
     .catch(next)
 }
 
 const updateItem = (req, res, next) => {
-  Users.findByIdAndUpdate(req.params.id, req.body)
+  Equipments.findByIdAndUpdate(req.params.id, req.body)
     .then(() => res.status(204).send())
     .catch(next)
 }
 
 const deleteItem = (req, res, next) => {
-  Users.findByIdAndRemove(req.params.id)
+  Equipments.findByIdAndRemove(req.params.id)
     .then(() => res.status(204).send())
     .catch(next)
 }
 
-const usersController = {
+const equipmentsController = {
   getList,
   getItem,
   createItem,
@@ -38,4 +38,4 @@ const usersController = {
   deleteItem,
 }
 
-export default usersController
+export default equipmentsController

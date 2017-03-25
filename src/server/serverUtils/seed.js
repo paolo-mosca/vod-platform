@@ -5,7 +5,7 @@ import serverConfig from '../serverConfig'
 // models
 import Categories from '../api/categories/categoriesModel'
 import Tags from '../api/tags/tagsModel'
-// import Equipments from '../api/equipments/equipmentModel'
+import Equipments from '../api/equipments/equipmentsModel'
 // import Chefs from '../api/chefs/chefsModel'
 // import Subscriptions from '../api/subscriptions/subscriptionsModel'
 import Ingredients from '../api/ingredients/ingredientsModel'
@@ -16,9 +16,9 @@ import Users from '../api/users/usersModel'
 import auth from '../auth'
 
 // data
-import { users, tags, skills, ingredients, categories } from './seedData'
+import { users, tags, skills, ingredients, categories, equipments } from './seedData'
 
-const Models = [Users, Tags, Skills, Ingredients, Categories]
+const Models = [Users, Tags, Skills, Ingredients, Categories, Equipments]
 
 // init
 serverLogger.log(`Seeding ${serverConfig.env} DB ...`)
@@ -46,6 +46,12 @@ const seedUsers = () => {
 const seedTags = () => {
   serverLogger.log('Seeding tags ...')
   const promises = tags.map(t => Tags.create(t))
+  return Promise.all(promises)
+}
+
+const seedEquipments = () => {
+  serverLogger.log('Seeding tags ...')
+  const promises = equipments.map(e => Equipments.create(e))
   return Promise.all(promises)
 }
 
@@ -81,6 +87,7 @@ const seed = () => {
     .then(seedCategories)
     .then(seedIngredients)
     .then(seedUsers)
+    .then(seedEquipments)
     .then(logSeedSuccess)
     .catch(logSeedError)
     .then(() => { ready = true })
