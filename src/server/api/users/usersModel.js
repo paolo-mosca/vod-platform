@@ -35,9 +35,12 @@ const UsersSchema = new Schema({
     default: false,
   },
 
-  subscription: {
-    type: Schema.Types.ObjectId,
-    ref: 'subscriptions',
+  subscriptions: {
+    type: [{
+      type: Schema.Types.ObjectId,
+      ref: 'subscriptions',
+    }],
+    default: [],
   },
 
   createdAt: {

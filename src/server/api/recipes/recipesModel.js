@@ -1,99 +1,123 @@
-/* eslint-disable */
+import mongoose, { Schema } from 'mongoose'
 
-const mongoose = require('mongoose')
-import idPlugin from '../../plugins/idPlugin'
-
-const Schema = mongoose.Schema
-const recipeIngredientSchema = require('./recipeIngredientSchema')
-const recipeStepSchema = require('./recipeStepSchema')
-const recipeEquipmentSchema = require('./recipeEquipmentSchema')
-var deepPopulate = require('mongoose-deep-populate')(mongoose);
-
-const RecipeSchema = Schema ({
+const RecipesSchema = new Schema({
   title: {
     type: String,
     unique: true,
-    required: true
+    required: true,
   },
   slug: {
     type: String,
     unique: true,
-    required: true
+    required: true,
   },
   description: {
     type: String,
-    required: true
+    required: true,
   },
   categories: [{
     type: Schema.Types.ObjectId,
-    ref: 'category'
+    ref: 'categories',
   }],
   tags: [{
     type: Schema.Types.ObjectId,
-    ref: 'tag'
+    ref: 'tags',
   }],
-  learningPath: [{
+  learningPaths: [{
     type: Schema.Types.ObjectId,
-    ref: 'learningPath',
-    required: true
+    ref: 'learningPaths',
+    required: true,
   }],
   courseType: {
     type: String,
     required: true,
-    enum: ['starter' , 'main', 'dessert', 'snack', 'drink', 'cocktail']
+    enum: ['starter', 'main', 'dessert', 'snack', 'drink', 'cocktail'],
   },
-  pictureIngredients: {
+  pictureIngredientsUrl: {
     type: String,
-    required: true
+    required: true,
   },
-  picturePlating: {
+  picturePlatingUrl: {
     type: String,
-    required: true
+    required: true,
   },
-  videoThumbnail: {
+  videoThumbnailUrl: {
     type: String,
-    required: true
+    required: true,
   },
   videoPreview: {
     type: String,
-    required: true
+    required: true,
   },
   videoFull: {
     type: String,
-    required: true
+    required: true,
   },
   length: {
     type: Number,
     min: 0,
-    default:0
+    default: 0,
   },
   difficulty: {
     type: String,
     required: true,
-    enum: ['easy' , 'easy-medium', 'medium', 'medium-hard', 'hard']
+    enum: ['easy', 'easy-medium', 'medium', 'medium-hard', 'hard'],
   },
   servings: {
     type: Number,
     required: true,
-    min: 1
+    min: 1,
   },
   price: {
     type: Number,
     required: true,
-    min: 0
+    min: 0,
   },
   chef: {
     type: Schema.Types.ObjectId,
     ref: 'chefs',
-    required: true
+    required: true,
   },
-  ingredients: [recipeIngredientSchema],
-  steps: [recipeStepSchema],
-  equipment: [recipeEquipmentSchema],
+  ingredients: [{
+    _id: {
+      type: Schema.Types.ObjectId,
+      ref: 'ingredients',
+      required: true,
+    },
+    quantity: {
+      type: Number,
+      required: true,
+    },
+    unit: {
+      type: String,
+      required: true,
+    },
+  }],
+  steps: [{
+    pictureUrl: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    tip: String,
+  }],
+  equipments: [{
+    _id: {
+      type: Schema.Types.ObjectId,
+      ref: 'equipments',
+    },
+    quantity: {
+      type: Number,
+      required: true,
+    },
+  }],
   skills: [{
     type: Schema.Types.ObjectId,
     ref: 'skills',
   }],
 })
 
-export default mongoose.model('recipe', RecipeSchema)
+export default mongoose.model('recipes', RecipesSchema)

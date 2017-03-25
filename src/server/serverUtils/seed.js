@@ -11,14 +11,16 @@ import Chefs from '../api/chefs/chefsModel'
 import Ingredients from '../api/ingredients/ingredientsModel'
 import Skills from '../api/skills/skillsModel'
 import LearningPaths from '../api/learningPaths/learningPathsModel'
-// import Recieps from '../api/recieps/reciepsModel'
+import Recipes from '../api/recipes/recipesModel'
 import Users from '../api/users/usersModel'
 import auth from '../auth'
 
 // data
-import { users, tags, skills, ingredients, categories, equipments, chefs, learningPaths } from './seedData'
+import { users, tags, skills, ingredients, categories, equipments,
+  chefs, learningPaths, recipes } from './seedData'
 
-const Models = [Users, Tags, Skills, Ingredients, Categories, Equipments, Chefs, LearningPaths]
+const Models = [Users, Tags, Skills, Ingredients, Categories,
+  Equipments, Chefs, LearningPaths, Recipes]
 
 // init
 serverLogger.log(`Seeding ${serverConfig.env} DB ...`)
@@ -50,19 +52,19 @@ const seedTags = () => {
 }
 
 const seedLearningPaths = () => {
-  serverLogger.log('Seeding tags ...')
+  serverLogger.log('Seeding learningPaths ...')
   const promises = learningPaths.map(l => LearningPaths.create(l))
   return Promise.all(promises)
 }
 
 const seedEquipments = () => {
-  serverLogger.log('Seeding tags ...')
+  serverLogger.log('Seeding equipments ...')
   const promises = equipments.map(e => Equipments.create(e))
   return Promise.all(promises)
 }
 
 const seedChefs = () => {
-  serverLogger.log('Seeding tags ...')
+  serverLogger.log('Seeding chefs ...')
   const promises = chefs.map(c => Chefs.create(c))
   return Promise.all(promises)
 }
@@ -76,6 +78,12 @@ const seedCategories = () => {
 const seedSkills = () => {
   serverLogger.log('Seeding skills ...')
   const promises = skills.map(s => Skills.create(s))
+  return Promise.all(promises)
+}
+
+const seedRecipes = () => {
+  serverLogger.log('Seeding recipes ...')
+  const promises = recipes.map(r => Recipes.create(r))
   return Promise.all(promises)
 }
 
@@ -99,6 +107,7 @@ const seed = () => {
     .then(seedCategories)
     .then(seedIngredients)
     .then(seedUsers)
+    .then(seedRecipes)
     .then(seedLearningPaths)
     .then(seedChefs)
     .then(seedEquipments)

@@ -56,13 +56,13 @@ const paAmbTomquetRecipe = {
   tags: [healthyTag._id],
   learningPath: [spanishPath._id],
   courseType: 'starter',
-  pictureIngredients: '0.jpg',
-  picturePlating: '1.jpg',
+  pictureIngredientsUrl: '0.jpg',
+  picturePlatingUrl: '1.jpg',
   videoThumbnailUrl: 'placeholdersmall.png',
   videoPreview: 'url4',
   videoFull: 'video-placeholder-big.png',
   length: '5',
-  difficulty: 'Easy',
+  difficulty: 'easy',
   servings: 2,
   chef: chefJohn._id,
   ingredients: [
@@ -72,15 +72,15 @@ const paAmbTomquetRecipe = {
     { _id: pepper._id, quantity: 1, unit: 'pinch' },
   ],
   steps: [{
-    picture: 'step1.png',
+    pictureUrl: 'step1.png',
     description: 'Toast the bread slices.',
     tip: 'Crunchy outside, soft inside!',
   }, {
-    picture: 'step2.png',
+    pictureUrl: 'step2.png',
     description: 'Spread with tomato first, add salt and pepper and finally the olive oil.',
     tip: 'You could also spread with garlic before the tomato to obtain a more tasty flavor.',
   }],
-  price: '10',
+  price: 10,
   equipments: [{ _id: toaster._id, quantity: 1 }, { _id: knife._id, quantity: 1 }],
   skills: [grillBread._id],
   _id: '56f619ce4c18778232e0855b',
@@ -409,8 +409,8 @@ const peterSubscription = { type: 'monthly', endsAt: getFutureDate(10), _id: '56
 export const subscriptions = [peterSubscription]
 
 // users
-const peter = { name: 'Peter Joseph', password: 'peter', subscription: peterSubscription._id, recipes: ['56f619ce4c18778232e0855b'], email: 'peterjoseph@gmail.com', _id: '56f5c57e63cb81a7148778a2' }
-const jacque = { name: 'Jacque Fresco', password: 'Jacque', recipes: ['56f619ce4c18778232e0855b'], email: 'jacquefresco@gmail.com', _id: '56f5d755340883743e85c7c8' }
+const peter = { name: 'Peter Joseph', password: 'peter', subscriptions: [peterSubscription._id], email: 'peterjoseph@gmail.com', _id: '56f5c57e63cb81a7148778a2' }
+const jacque = { name: 'Jacque Fresco', password: 'Jacque', recipes: [paAmbTomquetRecipe._id], email: 'jacquefresco@gmail.com', _id: '56f5d755340883743e85c7c8' }
 const dan = { name: 'Dan Admin', password: 'Dan', isAdmin: true, email: 'danadmin@gmail.com', _id: '56f5f355df1d5a376fc43306' }
 export const users = [peter, jacque, dan]
 

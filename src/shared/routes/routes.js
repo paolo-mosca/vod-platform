@@ -3,8 +3,7 @@
 export default {
   RECIPE_LIST_PAGE: '/',
 
-  recipeItem: (id: ?string) => `/api/recipes/${id || ':id'}`,
-  fetchRecipesEndpoint: () => '/api/recipes/',
+  recipeItem: (id: ?string) => `/recipes/${id || ':id'}`,
 
   // tags
   fetchTagsEndpoint: () => '/api/tags/',
@@ -54,6 +53,13 @@ export default {
   fetchEquipmentEndpoint: (id: string) => `/api/equipments/${id}`,
   updateEquipmentEndpoint: (id: string) => `/api/equipments/${id}`,
   deleteEquipmentEndpoint: (id: string) => `/api/equipments/${id}`,
+
+  // recipes
+  fetchRecipesEndpoint: () => '/api/recipes/',
+  createRecipeEndpoint: () => '/api/recipes/',
+  fetchRecipeEndpoint: (id: string) => `/api/recipes/${id}`,
+  updateRecipeEndpoint: (id: string) => `/api/recipes/${id}`,
+  deleteRecipeEndpoint: (id: string) => `/api/recipes/${id}`,
 
   // users
   fetchUsersEndpoint: () => '/api/users/',
