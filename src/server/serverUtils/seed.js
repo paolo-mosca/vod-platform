@@ -9,16 +9,16 @@ import Tags from '../api/tags/tagsModel'
 // import Chefs from '../api/chefs/chefsModel'
 // import Subscriptions from '../api/subscriptions/subscriptionsModel'
 // import Ingredients from '../api/ingredients/ingredientsModel'
-// import Skills from '../api/skills/skillsModel'
+import Skills from '../api/skills/skillsModel'
 // import LearningPaths from '../api/learningPaths/learningPathsModel'
 // import Recieps from '../api/recieps/reciepsModel'
 import Users from '../api/users/usersModel'
 import auth from '../auth'
 
 // data
-import { users, tags } from './seedData'
+import { users, tags, skills } from './seedData'
 
-const Models = [Users, Tags]
+const Models = [Users, Tags, Skills]
 
 // init
 serverLogger.log(`Seeding ${serverConfig.env} DB ...`)
@@ -49,6 +49,12 @@ const seedTags = () => {
   return Promise.all(promises)
 }
 
+const seedSkills = () => {
+  serverLogger.log('Seeding skills ...')
+  const promises = skills.map(s => Skills.create(s))
+  return Promise.all(promises)
+}
+
 const logSeedSuccess = () => {
   serverLogger.log('Seeded DB!')
 }
@@ -58,6 +64,7 @@ const logSeedError = err => serverLogger.error('error seeding DB:', err)
 const seed = () => {
   let ready // eslint-disable-line no-unmodified-loop-condition
   cleanDB()
+    .then(seedSkills)
     .then(seedUsers)
     .then(seedTags)
     .then(logSeedSuccess)

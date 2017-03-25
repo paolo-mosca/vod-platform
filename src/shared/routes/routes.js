@@ -12,6 +12,12 @@ export default {
   updateTagEndpoint: (id: string) => `/api/tags/${id}`,
   deleteTagEndpoint: (id: string) => `/api/tags/${id}`,
 
+  fetchSkillsEndpoint: () => '/api/skills/',
+  createSkillEndpoint: () => '/api/skills/',
+  fetchSkillEndpoint: (id: string) => `/api/skills/${id}`,
+  updateSkillEndpoint: (id: string) => `/api/skills/${id}`,
+  deleteSkillEndpoint: (id: string) => `/api/skills/${id}`,
+
   fetchUsersEndpoint: () => '/api/users/',
   createUserEndpoint: () => '/api/users/',
   fetchUserEndpoint: (id: string) => `/api/users/${id}`,
