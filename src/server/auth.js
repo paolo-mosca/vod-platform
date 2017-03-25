@@ -40,10 +40,19 @@ const verifyAdmin = (req, res, next) => {
   next()
 }
 
+const verifyOwner = (req, res, next) => {
+  if (req.user._id !== req.params.id) {
+    res.status(401).send('only the owner can perform this operation')
+    return
+  }
+  next()
+}
+
 const auth = {
   decodeToken,
   getFreshUser,
   verifyAdmin,
+  verifyOwner,
   signToken,
 }
 

@@ -9,10 +9,11 @@ const router = express.Router()
 
 router.route('/')
   .get(controller.getList)
-  .post(auth.decodeToken, auth.verifyAdmin, controller.createItem)
+  .post(auth.decodeToken, auth.getFreshUser, auth.verifyAdmin, controller.createItem)
 
 router.route('/:id')
-  .put(auth.decodeToken, auth.verifyAdmin, controller.updateItem)
-  .delete(auth.decodeToken, auth.verifyAdmin, controller.deleteItem)
+  .get(auth.decodeToken, auth.getFreshUser, auth.verifyAdmin, controller.getItem)
+  .put(auth.decodeToken, auth.getFreshUser, auth.verifyAdmin, controller.updateItem)
+  .delete(auth.decodeToken, auth.getFreshUser, auth.verifyAdmin, controller.deleteItem)
 
 export default router

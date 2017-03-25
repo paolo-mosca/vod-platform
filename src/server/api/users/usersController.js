@@ -1,32 +1,38 @@
 import Users from './usersModel'
 
-/* eslint-disable */
 const getList = (req, res, next) => {
   Users.find()
-    .then(res.json)
+    .then(users => res.json(users))
+    .catch(next)
+}
+
+const getItem = (req, res, next) => {
+  Users.findById(req.params.id)
+    .then(user => res.json(user))
     .catch(next)
 }
 
 const createItem = (req, res, next) => {
   Users.create(req.body)
-    .then(building => res.status(201).send(building))
+    .then(user => res.status(201).send(user))
     .catch(next)
 }
 
 const updateItem = (req, res, next) => {
-  Users.update({ _id: req.params.id }, { $set: req.body })
-    .then(res.json)
+  Users.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => res.status(204).send())
     .catch(next)
 }
 
 const deleteItem = (req, res, next) => {
   Users.findByIdAndRemove(req.params.id)
-    .then(res.json)
+    .then(() => res.status(204).send())
     .catch(next)
 }
 
 const tagsController = {
   getList,
+  getItem,
   createItem,
   updateItem,
   deleteItem,

@@ -19,15 +19,14 @@ const UsersSchema = new Schema({
   password: {
     type: String,
     select: false,
+    required: true,
   },
 
   recipes: {
     type: [{
       type: Schema.Types.ObjectId,
       ref: 'recipes',
-      required: true,
     }],
-    required: true,
     default: [],
   },
 
@@ -50,7 +49,7 @@ const UsersSchema = new Schema({
 
 }, { minimize: false })
 
-const preSave = (next) => {
+function preSave(next) {
   bcrypt.hash(this.password, 10, (err, hash) => {
     if (err) {
       next(err)

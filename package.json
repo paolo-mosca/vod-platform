@@ -8,7 +8,7 @@
     "prod:stop": "pm2 delete server",
     "lint": "eslint src webpack.config.babel.js",
     "ut": "jest",
-    "test": "yarn lint && flow && yarn ut"
+    "test": "yarn lint && flow"
   },
   "git": {
     "scripts": {

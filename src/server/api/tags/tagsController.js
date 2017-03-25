@@ -1,9 +1,14 @@
 import Tags from './tagsModel'
 
-/* eslint-disable */
 const getList = (req, res, next) => {
   Tags.find()
-    .then(res.json)
+    .then(tags => res.json(tags))
+    .catch(next)
+}
+
+const getItem = (req, res, next) => {
+  Tags.findById(req.params.id)
+    .then(tag => res.json(tag))
     .catch(next)
 }
 
@@ -14,19 +19,20 @@ const createItem = (req, res, next) => {
 }
 
 const updateItem = (req, res, next) => {
-  Tags.update({ _id: req.params.id }, { $set: req.body })
-    .then(res.json)
+  Tags.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => res.status(204).send())
     .catch(next)
 }
 
 const deleteItem = (req, res, next) => {
   Tags.findByIdAndRemove(req.params.id)
-    .then(res.json)
+    .then(() => res.status(204).send())
     .catch(next)
 }
 
 const tagsController = {
   getList,
+  getItem,
   createItem,
   updateItem,
   deleteItem,

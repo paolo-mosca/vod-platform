@@ -8,11 +8,12 @@ import auth from '../../auth'
 const router = express.Router()
 
 router.route('/')
-  .get(auth.decodeToken, auth.verifyAdmin, controller.getList)
-  .post(auth.decodeToken, auth.verifyAdmin, controller.createItem)
+  .get(auth.decodeToken, auth.getFreshUser, auth.verifyAdmin, controller.getList)
+  .post(auth.decodeToken, auth.getFreshUser, auth.verifyAdmin, controller.createItem)
 
 router.route('/:id')
-  .put(auth.decodeToken, auth.verifyAdmin, controller.updateItem)
-  .delete(auth.decodeToken, auth.verifyAdmin, controller.deleteItem)
+  .get(auth.decodeToken, auth.verifyOwner, controller.getItem)
+  .put(auth.decodeToken, auth.getFreshUser, auth.verifyAdmin, controller.updateItem)
+  .delete(auth.decodeToken, auth.getFreshUser, auth.verifyAdmin, controller.deleteItem)
 
 export default router

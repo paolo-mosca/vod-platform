@@ -409,9 +409,9 @@ const peterSubscription = { type: 'monthly', endsAt: getFutureDate(10), _id: '56
 export const subscriptions = [peterSubscription]
 
 // users
-const peter = { name: 'Peter Joseph', subscription: peterSubscription._id, recipes: ['56f619ce4c18778232e0855b'], email: 'peterjoseph@gmail.com', _id: '56f5c57e63cb81a7148778a2' }
-const jacque = { name: 'Jacque Fresco', recipes: ['56f619ce4c18778232e0855b'], email: 'jacquefresco@gmail.com', _id: '56f5d755340883743e85c7c8' }
-const dan = { name: 'Dan Admin', isAdmin: true, email: 'danadmin@gmail.com', _id: '56f5f355df1d5a376fc43306' }
+const peter = { name: 'Peter Joseph', password: 'peter', subscription: peterSubscription._id, recipes: ['56f619ce4c18778232e0855b'], email: 'peterjoseph@gmail.com', _id: '56f5c57e63cb81a7148778a2' }
+const jacque = { name: 'Jacque Fresco', password: 'Jacque', recipes: ['56f619ce4c18778232e0855b'], email: 'jacquefresco@gmail.com', _id: '56f5d755340883743e85c7c8' }
+const dan = { name: 'Dan Admin', password: 'Dan', isAdmin: true, email: 'danadmin@gmail.com', _id: '56f5f355df1d5a376fc43306' }
 export const users = [peter, jacque, dan]
 
 // mongo _ids for adding seeded items
