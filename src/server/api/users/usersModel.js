@@ -1,7 +1,6 @@
 import mongoose, { Schema } from 'mongoose'
 import 'mongoose-type-email'
 import bcrypt from 'bcryptjs'
-import uniqueValidator from 'mongoose-unique-validator'
 
 const UsersSchema = new Schema({
   name: {
@@ -61,6 +60,5 @@ function preSave(next) {
 }
 
 UsersSchema.pre('save', preSave)
-UsersSchema.plugin(uniqueValidator, { message: 'User with that email already exists' })
 
 export default mongoose.model('users', UsersSchema)
