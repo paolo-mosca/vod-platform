@@ -20,6 +20,13 @@ export default {
   updateSkillEndpoint: (id: string) => `/api/skills/${id}`,
   deleteSkillEndpoint: (id: string) => `/api/skills/${id}`,
 
+  // skills
+  fetchChefsEndpoint: () => '/api/chefs/',
+  createChefEndpoint: () => '/api/chefs/',
+  fetchChefEndpoint: (id: string) => `/api/chefs/${id}`,
+  updateChefEndpoint: (id: string) => `/api/chefs/${id}`,
+  deleteChefEndpoint: (id: string) => `/api/chefs/${id}`,
+
   // categories
   fetchCategoriesEndpoint: () => '/api/categories/',
   createCategoryEndpoint: () => '/api/categories/',
