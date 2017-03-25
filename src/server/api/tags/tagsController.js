@@ -14,7 +14,7 @@ const getItem = (req, res, next) => {
 
 const createItem = (req, res, next) => {
   Tags.create(req.body)
-    .then(building => res.status(201).send(building))
+    .then(tag => res.status(201).send(tag))
     .catch(next)
 }
 
