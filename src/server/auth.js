@@ -20,6 +20,10 @@ const decodeToken = (req, res, next) => {
 }
 
 const getFreshUser = (req, res, next) => {
+  if (!req.user) {
+    res.status(401).send('only users can perform this operation')
+    return
+  }
   User.findById(req.user._id)
     .then((user) => {
       if (!user) {
