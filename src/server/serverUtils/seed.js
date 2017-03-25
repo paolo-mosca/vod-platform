@@ -8,7 +8,7 @@ import Tags from '../api/tags/tagsModel'
 // import Equipments from '../api/equipments/equipmentModel'
 // import Chefs from '../api/chefs/chefsModel'
 // import Subscriptions from '../api/subscriptions/subscriptionsModel'
-// import Ingredients from '../api/ingredients/ingredientsModel'
+import Ingredients from '../api/ingredients/ingredientsModel'
 import Skills from '../api/skills/skillsModel'
 // import LearningPaths from '../api/learningPaths/learningPathsModel'
 // import Recieps from '../api/recieps/reciepsModel'
@@ -16,9 +16,9 @@ import Users from '../api/users/usersModel'
 import auth from '../auth'
 
 // data
-import { users, tags, skills } from './seedData'
+import { users, tags, skills, ingredients } from './seedData'
 
-const Models = [Users, Tags, Skills]
+const Models = [Users, Tags, Skills, Ingredients]
 
 // init
 serverLogger.log(`Seeding ${serverConfig.env} DB ...`)
@@ -55,6 +55,12 @@ const seedSkills = () => {
   return Promise.all(promises)
 }
 
+const seedIngredients = () => {
+  serverLogger.log('Seeding ingredients ...')
+  const promises = ingredients.map(i => Ingredients.create(i))
+  return Promise.all(promises)
+}
+
 const logSeedSuccess = () => {
   serverLogger.log('Seeded DB!')
 }
@@ -65,8 +71,9 @@ const seed = () => {
   let ready // eslint-disable-line no-unmodified-loop-condition
   cleanDB()
     .then(seedSkills)
-    .then(seedUsers)
     .then(seedTags)
+    .then(seedIngredients)
+    .then(seedUsers)
     .then(logSeedSuccess)
     .catch(logSeedError)
     .then(() => { ready = true })

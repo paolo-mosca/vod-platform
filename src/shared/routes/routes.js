@@ -18,6 +18,12 @@ export default {
   updateSkillEndpoint: (id: string) => `/api/skills/${id}`,
   deleteSkillEndpoint: (id: string) => `/api/skills/${id}`,
 
+  fetchIngredientsEndpoint: () => '/api/ingredients/',
+  createIngredientEndpoint: () => '/api/ingredients/',
+  fetchIngredientEndpoint: (id: string) => `/api/ingredients/${id}`,
+  updateIngredientEndpoint: (id: string) => `/api/ingredients/${id}`,
+  deleteIngredientEndpoint: (id: string) => `/api/ingredients/${id}`,
+
   fetchUsersEndpoint: () => '/api/users/',
   createUserEndpoint: () => '/api/users/',
   fetchUserEndpoint: (id: string) => `/api/users/${id}`,
