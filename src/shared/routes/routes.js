@@ -20,7 +20,14 @@ export default {
   updateSkillEndpoint: (id: string) => `/api/skills/${id}`,
   deleteSkillEndpoint: (id: string) => `/api/skills/${id}`,
 
-  // skills
+  // learningPaths
+  fetchLearningPathsEndpoint: () => '/api/learningPaths/',
+  createLearningPathEndpoint: () => '/api/learningPaths/',
+  fetchLearningPathEndpoint: (id: string) => `/api/learningPaths/${id}`,
+  updateLearningPathEndpoint: (id: string) => `/api/learningPaths/${id}`,
+  deleteLearningPathEndpoint: (id: string) => `/api/learningPaths/${id}`,
+
+  // chefs
   fetchChefsEndpoint: () => '/api/chefs/',
   createChefEndpoint: () => '/api/chefs/',
   fetchChefEndpoint: (id: string) => `/api/chefs/${id}`,
