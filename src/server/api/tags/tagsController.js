@@ -1,36 +1,36 @@
-import Recipes from './recipesModel'
+import Tags from './tagsModel'
 
 const getList = (req, res, next) => {
-  Recipes.find()
-    .then(recipes => res.json(recipes))
+  Tags.find()
+    .then(tags => res.json(tags))
     .catch(next)
 }
 
 const getItem = (req, res, next) => {
-  Recipes.findById(req.params.id)
-    .then(recipe => res.json(recipe))
+  Tags.findById(req.params.id)
+    .then(tag => res.json(tag))
     .catch(next)
 }
 
 const createItem = (req, res, next) => {
-  Recipes.create(req.body)
-    .then(recipe => res.status(201).send(recipe))
+  Tags.create(req.body)
+    .then(tag => res.status(201).send(tag))
     .catch(next)
 }
 
 const updateItem = (req, res, next) => {
-  Recipes.findByIdAndUpdate(req.params.id, req.body)
+  Tags.findByIdAndUpdate(req.params.id, req.body)
     .then(() => res.status(204).send())
     .catch(next)
 }
 
 const deleteItem = (req, res, next) => {
-  Recipes.findByIdAndRemove(req.params.id)
+  Tags.findByIdAndRemove(req.params.id)
     .then(() => res.status(204).send())
     .catch(next)
 }
 
-const recipesController = {
+const tagsController = {
   getList,
   getItem,
   createItem,
@@ -38,4 +38,4 @@ const recipesController = {
   deleteItem,
 }
 
-export default recipesController
+export default tagsController

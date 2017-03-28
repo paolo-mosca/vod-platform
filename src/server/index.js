@@ -3,7 +3,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
 
-// import seed from './utils/seed'
+import seed from './serverUtils/seed'
 import { STATIC_PATH } from '../shared/config'
 import serverConfig from './serverConfig'
 import serverLogger from './serverUtils/serverLogger'
@@ -16,16 +16,17 @@ const app = express()
 
 mongoose.connect(serverConfig.dbUrl)
 
-// if (serverConfig.shouldSeed) {
-//   seed()
-// }
+if (serverConfig.shouldSeed) {
+  seed()
+}
 
-pageRouter(app)
+middlewares.app(app)
 app.use(STATIC_PATH, express.static('dist'))
 app.use(STATIC_PATH, express.static('public'))
 app.use('/api', api)
-app.use('/api', middlewares.notFound)
+pageRouter(app)
 app.use(middlewares.error)
+app.use(middlewares.notFound)
 
 // avoid crash on test watch mode
 if (!module.parent) {

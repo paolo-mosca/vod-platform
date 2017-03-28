@@ -3,3 +3,6 @@ suppress_comment= \\(.\\|\n\\)*\\flow-disable-next-line
 
 [libs]
 flow-declarations/
+
+[ignore]
+.*/node_modules/bcryptjs/src/bower.json

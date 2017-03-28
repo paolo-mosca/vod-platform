@@ -11,7 +11,7 @@ const appMiddleware = (app: Object) => {
   }
 
   app.use(compression())
-  app.use(cors) // @TODO [AdGo] 20/03/2017 - restrict to our domain before launch
+  app.use(cors()) // @TODO [AdGo] 20/03/2017 - restrict to our domain before launch
   app.use(bodyParser.urlencoded({ extended: true }))
   app.use(bodyParser.json())
 }

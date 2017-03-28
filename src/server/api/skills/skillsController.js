@@ -1,36 +1,36 @@
-import Recipes from './recipesModel'
+import Skills from './skillsModel'
 
 const getList = (req, res, next) => {
-  Recipes.find()
-    .then(recipes => res.json(recipes))
+  Skills.find()
+    .then(skills => res.json(skills))
     .catch(next)
 }
 
 const getItem = (req, res, next) => {
-  Recipes.findById(req.params.id)
-    .then(recipe => res.json(recipe))
+  Skills.findById(req.params.id)
+    .then(skill => res.json(skill))
     .catch(next)
 }
 
 const createItem = (req, res, next) => {
-  Recipes.create(req.body)
-    .then(recipe => res.status(201).send(recipe))
+  Skills.create(req.body)
+    .then(skill => res.status(201).send(skill))
     .catch(next)
 }
 
 const updateItem = (req, res, next) => {
-  Recipes.findByIdAndUpdate(req.params.id, req.body)
+  Skills.findByIdAndUpdate(req.params.id, req.body)
     .then(() => res.status(204).send())
     .catch(next)
 }
 
 const deleteItem = (req, res, next) => {
-  Recipes.findByIdAndRemove(req.params.id)
+  Skills.findByIdAndRemove(req.params.id)
     .then(() => res.status(204).send())
     .catch(next)
 }
 
-const recipesController = {
+const skillsController = {
   getList,
   getItem,
   createItem,
@@ -38,4 +38,4 @@ const recipesController = {
   deleteItem,
 }
 
-export default recipesController
+export default skillsController

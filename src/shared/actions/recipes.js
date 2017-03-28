@@ -4,8 +4,6 @@ import { createAction } from 'redux-actions'
 
 // import { fetchRecipesEndpoint } from '../routes'
 
-import recipesMock from '../recipeData'
-
 export const FETCH_RECIPES = 'FETCH_RECIPES'
 export const FETCH_RECIPES_SUCCESS = 'FETCH_RECIPES_SUCCESS'
 export const FETCH_RECIPES_FAILURE = 'FETCH_RECIPES_FAILURE'
@@ -16,7 +14,7 @@ export const fetchRecipesFailure = createAction(FETCH_RECIPES_FAILURE)
 
 export const fetchRecipes = () => (dispatch: Function) => {
   dispatch(fetchRecipesRequest())
-  setTimeout(() => dispatch(fetchRecipesSuccess(recipesMock)), 700)
+  // setTimeout(() => dispatch(fetchRecipesSuccess(recipesMock)), 700)
   // fetch(fetchRecipesEndpoint())
   //   .then((res) => {
   //     if (!res.ok) throw new Error(res.statusText)
