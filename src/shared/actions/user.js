@@ -1,5 +1,6 @@
 // @flow
 
+import 'isomorphic-fetch'
 import { createAction } from 'redux-actions'
 
 import routes from '../routes'

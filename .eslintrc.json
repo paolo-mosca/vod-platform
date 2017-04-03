@@ -10,6 +10,9 @@
   "plugins": [
     "flowtype"
   ],
+  "settings": {
+    "polyfills": ["fetch"]
+  },
   "rules": {
     "import/order": [2, {"newlines-between": "always"}],
     "semi": [2, "never"],
