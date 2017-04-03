@@ -2,6 +2,9 @@
 
 export default {
   RECIPE_LIST_PAGE: '/',
+  ABOUT_US_PAGE: '/about',
+  TERMS_PAGE: '/terms',
+  PRIVACY_PAGE: '/privacy',
 
   recipeItemPage: (id: ?string) => `/recipes/${id || ':id'}`,
 

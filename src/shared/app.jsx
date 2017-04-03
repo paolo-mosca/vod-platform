@@ -11,6 +11,7 @@ import RecipeListPage from './pages/RecipeListPage'
 import RecipeItemPage from './pages/RecipeItemPage'
 import NotFoundPage from './pages/NotFoundPage'
 import HeaderContainer from './containers/HeaderContainer'
+import Footer from './components/Footer'
 
 const App = () =>
   <div className="main-container">
@@ -23,6 +24,7 @@ const App = () =>
         <Route component={() => <NotFoundPage />} />
       </Switch>
     </div>
+    <Footer />
   </div>
 
 export default App
