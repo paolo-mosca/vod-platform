@@ -2,7 +2,7 @@
 
 export default {
   RECIPE_LIST_PAGE: '/',
-  ABOUT_US_PAGE: '/about',
+  ABOUT_PAGE: '/about',
   TERMS_PAGE: '/terms',
   PRIVACY_PAGE: '/privacy',
 

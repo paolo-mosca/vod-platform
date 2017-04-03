@@ -22,7 +22,7 @@ const Footer = () =>
         </a>
       </div>
       <nav className="secondary-nav">
-        <NavLink to={routes.ABOUT_US_PAGE}>About us</NavLink>
+        <NavLink to={routes.ABOUT_PAGE}>About us</NavLink>
         <NavLink to={routes.TERMS_PAGE}>Terms</NavLink>
         <NavLink to={routes.PRIVACY_PAGE}>Privacy</NavLink>
       </nav>
