@@ -30,6 +30,7 @@ const renderApp = (location: string, plainPartialState: ?Object, routerContext: 
         ${head.meta}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto|Nunito" rel="stylesheet" />
+        <link href="${STATIC_PATH}/css/main.css" rel="stylesheet" />
       </head>
       <body>
         <div class="${APP_CONTAINER_CLASS}">${appHtml}</div>

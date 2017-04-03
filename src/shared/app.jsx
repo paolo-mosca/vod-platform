@@ -8,15 +8,17 @@ import Helmet from 'react-helmet'
 import { APP_NAME } from './config'
 import routes from './routes'
 import RecipeListPage from './pages/RecipeListPage'
+import RecipeItemPage from './pages/RecipeItemPage'
 import NotFoundPage from './pages/NotFoundPage'
-import Header from './components/Header'
+import HeaderContainer from './containers/HeaderContainer'
 
 const App = () =>
   <div className="main-container">
     <Helmet titleTemplate={`%s | ${APP_NAME}`} defaultTitle={APP_NAME} />
-    <Header />
+    <HeaderContainer />
     <div className="container">
       <Switch>
+        <Route exact path={routes.recipeItemPage()} render={() => <RecipeItemPage />} />
         <Route exact path={routes.RECIPLE_LIST_PAGE} render={() => <RecipeListPage />} />
         <Route component={() => <NotFoundPage />} />
       </Switch>

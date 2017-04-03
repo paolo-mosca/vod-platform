@@ -3,7 +3,7 @@
 export default {
   RECIPE_LIST_PAGE: '/',
 
-  recipeItem: (id: ?string) => `/recipes/${id || ':id'}`,
+  recipeItemPage: (id: ?string) => `/recipes/${id || ':id'}`,
 
   // tags
   fetchTagsEndpoint: () => '/api/tags/',

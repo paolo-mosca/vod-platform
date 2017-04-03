@@ -4,6 +4,7 @@ import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 
 import recipesReducer from '../shared/reducers/recipesReducer'
+import userReducer from '../shared/reducers/userReducer'
 
 const initStore = (plainPartialState: ?Object) => {
   const preloadedState = plainPartialState ? {} : undefined
@@ -13,8 +14,14 @@ const initStore = (plainPartialState: ?Object) => {
     preloadedState.recipes = recipesReducer(undefined, {})
       .merge(plainPartialState.recipes)
   }
-  return createStore(combineReducers({ recipes: recipesReducer }),
-    preloadedState, applyMiddleware(thunkMiddleware))
+  if (plainPartialState && plainPartialState.inputs) {
+    // flow-disable-next-line
+    preloadedState.inputs = userReducer(undefined, {})
+      .merge(plainPartialState.inputs)
+  }
+
+  const reducers = combineReducers({ recipes: recipesReducer, user: userReducer })
+  return createStore(reducers, preloadedState, applyMiddleware(thunkMiddleware))
 }
 
 export default initStore

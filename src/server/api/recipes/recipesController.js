@@ -2,6 +2,7 @@ import Recipes from './recipesModel'
 
 const getList = (req, res, next) => {
   Recipes.find()
+    .populate('chef categories')
     .then(recipes => res.json(recipes))
     .catch(next)
 }

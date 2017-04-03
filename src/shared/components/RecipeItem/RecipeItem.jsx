@@ -7,14 +7,15 @@ import { STATIC_PATH } from '../../config'
 type Props = {
   title: string,
   description: string,
+  categories: [{ name: string }],
   videoThumbnailUrl: string,
   chef: {
-    name: string, // eslint-disable-line react/no-unused-prop-types
-    thumbnailUrl: string, // eslint-disable-line react/no-unused-prop-types
+    name: string,
+    thumbnailUrl: string,
   }
 };
 
-const RecipeItem = ({ title, description, videoThumbnailUrl, chef }: Props) =>
+const RecipeItem = ({ title, description, categories, videoThumbnailUrl, chef }: Props) =>
   <div className="recipe-component">
     <div className="recipe-video-preview-holder">
       <img className="recipe-image" src={`${STATIC_PATH}/img/${videoThumbnailUrl}`} alt="Video Thumbnail" />
@@ -27,6 +28,11 @@ const RecipeItem = ({ title, description, videoThumbnailUrl, chef }: Props) =>
       <span className="recipe-author-name">{chef.name}</span>
     </div>
     <div className="card-content">
+      <div className="recipe-categories">
+        <ul>
+          {categories.map(category => <li key={category.name}>{category.name}</li>)}
+        </ul>
+      </div>
       <div className="recipe-description">
         <h5>{description}</h5>
       </div>

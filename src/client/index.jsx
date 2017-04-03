@@ -12,6 +12,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { AppContainer } from 'react-hot-loader'
 
 import recipesReducer from '../shared/reducers/recipesReducer'
+import userReducer from '../shared/reducers/userReducer'
 import { APP_SELECTOR } from '../shared/config'
 import { isProd } from '../shared/util'
 import App from '../shared/app'
@@ -27,8 +28,8 @@ const loggerMiddleware = new CreateLogger({
 })
 
 const store = createStore(
-  combineReducers({ recipes: recipesReducer }),
-  { recipes: preloadedState.recipes },
+  combineReducers({ recipes: recipesReducer, user: userReducer }),
+  { recipes: preloadedState.recipes, user: preloadedState.inputs },
   composeEnhancers(applyMiddleware(thunkMiddleware, loggerMiddleware)))
 
 const render = (AppComponent, reduxStore) =>

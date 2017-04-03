@@ -10,7 +10,7 @@ const router = express.Router()
 
 router.route('/')
   .get(auth.decodeToken, auth.getFreshUser, auth.verifyAdmin, controller.getList)
-  .post(auth.decodeToken, auth.getFreshUser, auth.verifyAdmin, controller.createItem)
+  .post(controller.createItem)
 
 router.route('/:id')
   .get(auth.decodeToken, auth.verifyOwner, controller.getItem)
