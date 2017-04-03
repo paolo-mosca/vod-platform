@@ -49,7 +49,7 @@ const RecipesSchema = new Schema({
     type: String,
     required: true,
   },
-  videoFull: {
+  videoFullUrl: {
     type: String,
     required: true,
   },
@@ -102,7 +102,10 @@ const RecipesSchema = new Schema({
       type: String,
       required: true,
     },
-    tip: String,
+    tip: {
+      type: String,
+      rquired: true,
+    },
   }],
   equipments: [{
     _id: {
@@ -118,6 +121,11 @@ const RecipesSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'skills',
   }],
+  createdAt: {
+    type: Date,
+    default: Date.now,
+    required: true,
+  },
 })
 
 export default mongoose.model('recipes', RecipesSchema)

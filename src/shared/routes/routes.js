@@ -6,7 +6,7 @@ export default {
   TERMS_PAGE: '/terms',
   PRIVACY_PAGE: '/privacy',
 
-  recipeItemPage: (id: ?string) => `/recipes/${id || ':id'}`,
+  recipeDetailPage: (id: ?string) => `/recipes/${id || ':id'}`,
 
   // tags
   fetchTagsEndpoint: () => '/api/tags/',
@@ -60,7 +60,7 @@ export default {
   // recipes
   fetchRecipesEndpoint: () => '/api/recipes/',
   createRecipeEndpoint: () => '/api/recipes/',
-  fetchRecipeEndpoint: (id: string) => `/api/recipes/${id}`,
+  fetchRecipeDetailsEndpoint: (id: string) => `/api/recipes/${id}`,
   updateRecipeEndpoint: (id: string) => `/api/recipes/${id}`,
   deleteRecipeEndpoint: (id: string) => `/api/recipes/${id}`,
 

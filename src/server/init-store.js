@@ -11,13 +11,22 @@ const initStore = (plainPartialState: ?Object) => {
 
   if (plainPartialState && plainPartialState.recipes) {
     // flow-disable-next-line
-    preloadedState.recipes = recipesReducer(undefined, {})
-      .merge(plainPartialState.recipes)
+    preloadedState.recipes = Object.assign(
+      {},
+      // flow-disable-next-line
+      recipesReducer(undefined, {}),
+      plainPartialState.recipes,
+    )
   }
+
   if (plainPartialState && plainPartialState.inputs) {
     // flow-disable-next-line
-    preloadedState.inputs = userReducer(undefined, {})
-      .merge(plainPartialState.inputs)
+    preloadedState.inputs = Object.assign(
+      {},
+      // flow-disable-next-line
+      userReducer(undefined, {}),
+     plainPartialState.inputs,
+   )
   }
 
   const reducers = combineReducers({ recipes: recipesReducer, user: userReducer })

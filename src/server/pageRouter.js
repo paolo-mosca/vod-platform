@@ -2,7 +2,7 @@
 
 import routes from '../shared/routes'
 
-import { recipeListPage, privacyPage, aboutPage, termsPage, recipeItemPage } from './pageController'
+import { recipeListPage, privacyPage, aboutPage, termsPage, recipeDetailPage } from './pageController'
 import renderApp from './render-app'
 
 const routing = (app: Object) => {
@@ -22,8 +22,8 @@ const routing = (app: Object) => {
     res.send(renderApp(req.url, termsPage()))
   })
 
-  app.get(routes.recipeItemPage(), (req, res) => {
-    res.send(renderApp(req.url, recipeItemPage()))
+  app.get(routes.recipeDetailPage(), (req, res) => {
+    res.send(renderApp(req.url, recipeDetailPage()))
   })
 
   app.get('*', (req, res) => {

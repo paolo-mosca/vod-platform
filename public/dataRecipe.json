@@ -16,7 +16,7 @@
 		"picturePlating": "1.jpg",
 		"videoThumbnail": "placeholdersmall.png",
 		"videoPreview": "url4",
-		"videoFull": "video-placeholder-big.png",
+		"videoFullUrl": "video-placeholder-big.png",
 		"length": "5",
 		"difficulty": "Easy",
 		"servings": "2",
@@ -52,7 +52,7 @@
 			"tip": "You could also spread with garlic before the tomato to obtain a more tasty flavor."
 		}],
 		"price": "10",
-		"equipment": [{
+		"equipments": [{
 			"name": "toaster",
 			"quantity": "1"
 		}, {
@@ -91,7 +91,7 @@
 		"picturePlating": "7.jpg",
 		"videoThumbnail": "placeholdersmall.png",
 		"videoPreview": "url4",
-		"videoFull": "video-placeholder-big.png",
+		"videoFullUrl": "video-placeholder-big.png",
 		"length": "5",
 		"difficulty": "Medium",
 		"servings": "2",
@@ -151,7 +151,7 @@
 			"tip": "You can also use champagne or white wine to obtain a ligther taste. "
 		}],
 		"price": "10",
-		"equipment": [{
+		"equipments": [{
 			"name": "casserole with the cover",
 			"quantity": "1"
 		}, {
@@ -195,7 +195,7 @@
 		"picturePlating": "16.jpg",
 		"videoThumbnail": "placeholdersmall.png",
 		"videoPreview": "url4",
-		"videoFull": "video-placeholder-big.png",
+		"videoFullUrl": "video-placeholder-big.png",
 		"length": "5",
 		"difficulty": "Easy",
 		"servings": "2",
@@ -251,7 +251,7 @@
 			"tip": "Be aware that people tend to dislike coriander"
 		}],
 		"price": "10",
-		"equipment": [{
+		"equipments": [{
 			"name": "knife",
 			"quantity": "1"
 		}, {
@@ -289,7 +289,7 @@
 		"picturePlating": "21.jpg",
 		"videoThumbnail": "placeholdersmall.png",
 		"videoPreview": "url4",
-		"videoFull": "video-placeholder-big.png",
+		"videoFullUrl": "video-placeholder-big.png",
 		"length": "5",
 		"difficulty": "Easy",
 		"servings": "2",
@@ -372,7 +372,7 @@
 			"tip": ""
 		}],
 		"price": "10",
-		"equipment": [{
+		"equipments": [{
 			"name": "knife",
 			"quantity": "1"
 		}, {

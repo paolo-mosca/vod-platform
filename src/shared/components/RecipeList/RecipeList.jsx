@@ -23,7 +23,7 @@ class RecipeList extends React.Component {
     <div className="container grid subsection-recipes" key={recipe._id}>
       <div className="recipe-item">
         <RecipeItem {...recipe} />
-        <NavLink to={routes.recipeItemPage(recipe._id)} className="btn btn-alt recipe-detailed-info" exact>
+        <NavLink to={routes.recipeDetailPage(recipe._id)} className="btn btn-alt recipe-detailed-info" exact>
           Read more...
         </NavLink>
       </div>
