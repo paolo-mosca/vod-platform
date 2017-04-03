@@ -1,13 +1,13 @@
 // @flow
 
 import routes from '../shared/routes'
-import { homePage } from './pageController'
 
+import { recipeListPage } from './pageController'
 import renderApp from './render-app'
 
 const routing = (app: Object) => {
   app.get(routes.RECIPE_LIST_PAGE, (req, res) => {
-    res.send(renderApp(req.url, homePage()))
+    res.send(renderApp(req.url, recipeListPage()))
   })
 
   app.get('*', (req, res) => {

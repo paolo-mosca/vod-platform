@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { STATIC_PATH } from '../config'
+import { STATIC_PATH } from '../../config'
 
 type Props = {
   title: string,

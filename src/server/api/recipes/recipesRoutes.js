@@ -3,6 +3,7 @@
 import express from 'express'
 
 import auth from '../../auth'
+
 import controller from './recipesController'
 
 const router = express.Router()

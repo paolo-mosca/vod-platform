@@ -2,8 +2,9 @@
 
 import express from 'express'
 
-import controller from './categoriesController'
 import auth from '../../auth'
+
+import controller from './categoriesController'
 
 const router = express.Router()
 

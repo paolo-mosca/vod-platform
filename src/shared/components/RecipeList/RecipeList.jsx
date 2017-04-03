@@ -3,8 +3,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-import routes from '../routes'
-import RecipeItem from './RecipeItem'
+import routes from '../../routes'
+import RecipeItem from '../RecipeItem'
 
 class RecipeList extends React.Component {
 

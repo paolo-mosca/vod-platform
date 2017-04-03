@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import RecipeListContainer from '../RecipeListContainer'
+import RecipeListContainer from '../containers/RecipeListContainer'
 
 const RecipeListPage = () =>
   <div>
