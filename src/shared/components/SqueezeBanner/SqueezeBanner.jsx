@@ -21,10 +21,10 @@ const SqueezeBanner = ({ email, emailInput, updateEmailInput, onSubmit }: Props)
           onChange={evt => updateEmailInput(evt.target.value)}
           value={emailInput}
           placeholder="I want to cook! Take my email!"
-          className="email-value"
+          className="squeeze-banner-input"
           required
         />
-        <button className="btn">Get started for FREE</button>
+        <button className="squeeze-banner-button">Get started for FREE</button>
       </form>
     </div>
   )
