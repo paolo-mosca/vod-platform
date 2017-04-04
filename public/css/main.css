@@ -462,9 +462,20 @@ nav {
   padding: 20px 0;
   background-color: #f8f8f8;
   border-top: 1px solid #e7e7e7;
-  /*position:absolute;
-  bottom:0;
-  width: 100%;*/
+}
+
+.primary-footer > .nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.primary-footer-left {
+  display: flex;
+}
+
+.primary-footer-left .social-icons {
+  display: flex;
 }
 
 .primary-footer small {
@@ -474,7 +485,7 @@ nav {
 }
 
 .logo-social-media {
-  max-width: 20px;
+  width: 20px;
 }
 
 
