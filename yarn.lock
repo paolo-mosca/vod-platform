@@ -1575,6 +1575,10 @@ cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0":
   dependencies:
     cssom "0.3.x"
 
+custom-error-generator@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/custom-error-generator/-/custom-error-generator-7.0.0.tgz#b16f8d09636327f69ae80a1043766f30f4506408"
+
 d@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/d/-/d-1.0.0.tgz#754bb5bfe55451da69a58b94d45f4c5b0462d58f"

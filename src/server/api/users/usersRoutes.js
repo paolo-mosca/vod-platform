@@ -17,4 +17,6 @@ router.route('/:id')
   .put(auth.decodeToken, auth.getFreshUser, auth.verifyAdmin, controller.updateItem)
   .delete(auth.decodeToken, auth.getFreshUser, auth.verifyAdmin, controller.deleteItem)
 
+router.route('/login')
+  .post(controller.login)
 export default router
