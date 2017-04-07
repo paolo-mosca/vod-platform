@@ -69,3 +69,6 @@ export const lostPassword = ({ email }: Object) => (dispatch: Function) => {
 
 export const SIGNOUT = 'LOGOUT'
 export const signout = createAction(SIGNOUT)
+
+export const SYNC_USER_FROM_LS = 'SYNC_USER_FROM_LS'
+export const syncUserFromLs = createAction(SYNC_USER_FROM_LS)

@@ -12,12 +12,15 @@ import { BrowserRouter } from 'react-router-dom'
 import { AppContainer } from 'react-hot-loader'
 import { reducer as formReducer } from 'redux-form'
 
+import { initApp } from '../shared/actions/app'
 import recipesReducer from '../shared/reducers/recipesReducer'
 import userReducer from '../shared/reducers/userReducer'
 import modalReducer from '../shared/reducers/modalReducer'
 import { APP_SELECTOR } from '../shared/config'
 import { isProd } from '../shared/util'
 import App from '../shared/App'
+
+import userMiddleware from './userMiddleware'
 
 /* eslint-disable no-underscore-dangle */
 const composeEnhancers = (isProd ? null : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
@@ -36,7 +39,7 @@ const reducers = {
 const store = createStore(
   combineReducers(reducers),
   { recipes: preloadedState.recipes, user: preloadedState.inputs },
-  composeEnhancers(applyMiddleware(thunkMiddleware, loggerMiddleware)))
+  composeEnhancers(applyMiddleware(thunkMiddleware, loggerMiddleware, userMiddleware)))
 
 const render = (AppComponent, reduxStore) =>
   ReactDOM.render( // eslint-disable-line react/no-render-return-value
@@ -59,3 +62,5 @@ if (module.hot) {
     render(NextApp, store)
   })
 }
+
+store.dispatch(initApp())
