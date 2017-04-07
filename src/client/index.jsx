@@ -17,7 +17,7 @@ import userReducer from '../shared/reducers/userReducer'
 import modalReducer from '../shared/reducers/modalReducer'
 import { APP_SELECTOR } from '../shared/config'
 import { isProd } from '../shared/util'
-import App from '../shared/app'
+import App from '../shared/App'
 
 /* eslint-disable no-underscore-dangle */
 const composeEnhancers = (isProd ? null : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
@@ -54,8 +54,8 @@ render(App, store)
 
 if (module.hot) {
   // flow-disable-next-line
-  module.hot.accept('../shared/app', () => {
-    const NextApp = require('../shared/app').default // eslint-disable-line global-require
+  module.hot.accept('../shared/App', () => {
+    const NextApp = require('../shared/App').default // eslint-disable-line global-require
     render(NextApp, store)
   })
 }

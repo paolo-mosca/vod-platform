@@ -8,7 +8,7 @@ import Helmet from 'react-helmet'
 
 import { APP_CONTAINER_CLASS, STATIC_PATH, WDS_PORT } from '../shared/config'
 import { isProd } from '../shared/util'
-import App from '../shared/app'
+import App from '../shared/App'
 
 import initStore from './init-store'
 
