@@ -75,3 +75,6 @@ export const lostPassword = ({ email }: Object) => (dispatch: Function) => {
       throw new SubmissionError({ _error: err })
     })
 }
+
+export const SIGNOUT = 'LOGOUT'
+export const signout = createAction(SIGNOUT)

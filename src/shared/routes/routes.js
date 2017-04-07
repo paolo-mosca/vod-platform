@@ -2,6 +2,7 @@
 
 export default {
   RECIPE_LIST_PAGE: '/',
+  RECIPE_CREATE_PAGE: '/create',
   ABOUT_PAGE: '/about',
   TERMS_PAGE: '/terms',
   PRIVACY_PAGE: '/privacy',

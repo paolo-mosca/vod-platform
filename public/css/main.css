@@ -57,6 +57,10 @@ body {
   font: 300 16px/22px 'Roboto', 'Nunito', Helvetica, Arial, sans-serif;
 }
 
+button, a {
+  cursor: pointer;
+}
+
 
 /*
   ========================================
@@ -338,7 +342,6 @@ a {
 .header > .container {
   display: flex;
   justify-content: space-between;
-  align-content: center;
 }
 
 .logo {
@@ -354,6 +357,61 @@ a {
 .nav-primary {
   font-size: 16px;
   font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-primary-item {
+  height: auto;
+}
+
+.nav-primary-register {
+  color: green;
+}
+
+.nav-primary-user {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  position: relative;
+}
+
+.nav-primary-user-menu {
+  position: absolute;
+  display: none;
+  top: 55px;
+  padding-top: 15px;
+  background: #fff;
+  text-align: center;
+  padding: 10px 15px;
+  z-index: 10;
+  right: -50px;
+  width: 140px;
+}
+
+.nav-primary-user-menu::before {
+  content: '';
+  margin-right: auto;
+  margin-left: auto;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -15px;
+  left: 0;
+  right: 0;
+  border-bottom: 15px solid #fff;
+  border-right: 38px solid transparent;
+  border-left: 38px solid transparent;
+}
+
+.nav-primary-user:hover .nav-primary-user-menu {
+  display: block;
+}
+
+.nav-primary-user-menu > * {
+  white-space: nowrap;
 }
 
 @media only screen and (max-width : 490px) {

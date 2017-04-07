@@ -1,12 +1,11 @@
 // @flow
 
 import { CREATE_USER_SUCCESS, GO_TO_LOGIN, GO_TO_SIGNUP, GO_TO_LOST_PASSWORD,
-  CLOSE_MODAL, LOGIN_SUCCESS, LOST_PASSWORD_SUCCESS } from '../actions/user'
+  SIGNOUT, CLOSE_MODAL, LOGIN_SUCCESS, LOST_PASSWORD_SUCCESS } from '../actions/user'
 
 const initialState = {
   modalStatus: 'closed',
-  name: null,
-  email: null,
+  _id: '234324',
 }
 
 const inputs = (state: Object = initialState, action: { type: string, payload: any }) => {
@@ -27,6 +26,11 @@ const inputs = (state: Object = initialState, action: { type: string, payload: a
       return {
         ...state,
         modalStatus: 'closed',
+      }
+    case SIGNOUT:
+      return {
+        ...state,
+        user: {},
       }
     case GO_TO_LOGIN:
       return {
