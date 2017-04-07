@@ -14,6 +14,7 @@ import { reducer as formReducer } from 'redux-form'
 
 import recipesReducer from '../shared/reducers/recipesReducer'
 import userReducer from '../shared/reducers/userReducer'
+import modalReducer from '../shared/reducers/modalReducer'
 import { APP_SELECTOR } from '../shared/config'
 import { isProd } from '../shared/util'
 import App from '../shared/app'
@@ -28,8 +29,12 @@ const loggerMiddleware = new CreateLogger({
   collapsed: true,
 })
 
+const reducers = {
+  recipes: recipesReducer, user: userReducer, form: formReducer, modal: modalReducer,
+}
+
 const store = createStore(
-  combineReducers({ recipes: recipesReducer, user: userReducer, form: formReducer }),
+  combineReducers(reducers),
   { recipes: preloadedState.recipes, user: preloadedState.inputs },
   composeEnhancers(applyMiddleware(thunkMiddleware, loggerMiddleware)))
 

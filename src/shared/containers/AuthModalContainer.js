@@ -2,11 +2,11 @@
 
 import { connect } from 'react-redux'
 
-import { goToLogin, goToSignup, goToLostPassword, closeModal,
-  login, createUser, lostPassword } from '../actions/user'
+import { login, createUser, lostPassword } from '../actions/user'
+import { goToLogin, goToSignup, goToLostPassword, closeModal } from '../actions/modal'
 import AuthModal from '../components/AuthModal'
 
-const mapStateToProps = state => state.user
+const mapStateToProps = state => Object.assign({}, state.user, { modalStatus: state.modal.status })
 
 const mapDispatchToProps = dispatch => ({
   onGoToLoginClick: () => dispatch(goToLogin()),

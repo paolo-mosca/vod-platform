@@ -7,15 +7,6 @@ import { SubmissionError } from 'redux-form'
 import routes from '../routes'
 import http from '../utils/http'
 
-export const GO_TO_LOGIN = 'GO_TO_LOGIN'
-export const goToLogin = createAction(GO_TO_LOGIN)
-export const GO_TO_SIGNUP = 'GO_TO_SIGNUP'
-export const goToSignup = createAction(GO_TO_SIGNUP)
-export const GO_TO_LOST_PASSWORD = 'GO_TO_LOST_PASSWORD'
-export const goToLostPassword = createAction(GO_TO_LOST_PASSWORD)
-export const CLOSE_MODAL = 'CLOSE_MODAL'
-export const closeModal = createAction(CLOSE_MODAL)
-
 export const CREATE_USER = 'CREATE_USER'
 export const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS'
 export const createUserRequest = createAction(CREATE_USER)

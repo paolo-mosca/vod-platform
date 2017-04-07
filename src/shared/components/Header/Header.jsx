@@ -11,9 +11,10 @@ type Props = {
     isAdmin: ?boolean,
   },
   onSignout: Function,
+  onRegisterClick: Function,
 };
 
-const Header = ({ onSignout, user }: Props) =>
+const Header = ({ onSignout, onRegisterClick, user }: Props) =>
   <header className="header">
     <div className="container">
       <NavLink to={routes.RECIPE_LIST_PAGE} className="logo">
@@ -22,7 +23,7 @@ const Header = ({ onSignout, user }: Props) =>
       <div className="nav-primary">
         <NavLink to={routes.RECIPE_LIST_PAGE} className="nav-primary-item">Recipes</NavLink>
         { !user._id &&
-          <a className="nav-primary-item nav-primary-register">Register</a> }
+          <a className="nav-primary-item nav-primary-register" onClick={onRegisterClick}>Register</a> }
         { user.isAdmin &&
           <NavLink to={routes.RECIPE_CREATE_PAGE} className="nav-primary-item">Create Recipe</NavLink>}
         { user._id &&

@@ -6,6 +6,7 @@ import { reducer as formReducer } from 'redux-form'
 
 import recipesReducer from '../shared/reducers/recipesReducer'
 import userReducer from '../shared/reducers/userReducer'
+import modalReducer from '../shared/reducers/modalReducer'
 
 const initStore = (plainPartialState: ?Object) => {
   const preloadedState = plainPartialState ? {} : undefined
@@ -20,18 +21,8 @@ const initStore = (plainPartialState: ?Object) => {
     )
   }
 
-  if (plainPartialState && plainPartialState.inputs) {
-    // flow-disable-next-line
-    preloadedState.inputs = Object.assign(
-      {},
-      // flow-disable-next-line
-      userReducer(undefined, {}),
-     plainPartialState.inputs,
-   )
-  }
-
   const reducers = combineReducers({
-    recipes: recipesReducer, user: userReducer, form: formReducer,
+    recipes: recipesReducer, user: userReducer, form: formReducer, modal: modalReducer,
   })
   return createStore(reducers, preloadedState, applyMiddleware(thunkMiddleware))
 }

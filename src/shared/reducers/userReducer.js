@@ -1,60 +1,26 @@
 // @flow
 
-import { CREATE_USER_SUCCESS, GO_TO_LOGIN, GO_TO_SIGNUP, GO_TO_LOST_PASSWORD,
-  SIGNOUT, CLOSE_MODAL, LOGIN_SUCCESS, LOST_PASSWORD_SUCCESS } from '../actions/user'
+import { CREATE_USER_SUCCESS, SIGNOUT, LOGIN_SUCCESS } from '../actions/user'
 
-const initialState = {
-  modalStatus: 'closed',
-  _id: '234324',
-}
+const initialState = {}
 
-const inputs = (state: Object = initialState, action: { type: string, payload: any }) => {
+const userReducer = (state: Object = initialState, action: { type: string, payload: any }) => {
   switch (action.type) {
     case CREATE_USER_SUCCESS:
       return {
         ...state,
         ...action.payload,
-        modalStatus: 'closed',
       }
     case LOGIN_SUCCESS:
       return {
         ...state,
         ...action.payload,
-        modalStatus: 'closed',
-      }
-    case LOST_PASSWORD_SUCCESS:
-      return {
-        ...state,
-        modalStatus: 'closed',
       }
     case SIGNOUT:
-      return {
-        ...state,
-        user: {},
-      }
-    case GO_TO_LOGIN:
-      return {
-        ...state,
-        modalStatus: 'login',
-      }
-    case GO_TO_SIGNUP:
-      return {
-        ...state,
-        modalStatus: 'signup',
-      }
-    case GO_TO_LOST_PASSWORD:
-      return {
-        ...state,
-        modalStatus: 'lostPassword',
-      }
-    case CLOSE_MODAL:
-      return {
-        ...state,
-        modalStatus: 'closed',
-      }
+      return {}
     default:
       return state
   }
 }
 
-export default inputs
+export default userReducer
