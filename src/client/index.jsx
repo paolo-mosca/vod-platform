@@ -10,6 +10,7 @@ import thunkMiddleware from 'redux-thunk'
 import CreateLogger from 'redux-logger'
 import { BrowserRouter } from 'react-router-dom'
 import { AppContainer } from 'react-hot-loader'
+import { reducer as formReducer } from 'redux-form'
 
 import recipesReducer from '../shared/reducers/recipesReducer'
 import userReducer from '../shared/reducers/userReducer'
@@ -28,7 +29,7 @@ const loggerMiddleware = new CreateLogger({
 })
 
 const store = createStore(
-  combineReducers({ recipes: recipesReducer, user: userReducer }),
+  combineReducers({ recipes: recipesReducer, user: userReducer, form: formReducer }),
   { recipes: preloadedState.recipes, user: preloadedState.inputs },
   composeEnhancers(applyMiddleware(thunkMiddleware, loggerMiddleware)))
 

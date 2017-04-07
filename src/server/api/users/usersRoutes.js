@@ -19,4 +19,8 @@ router.route('/:id')
 
 router.route('/login')
   .post(controller.login)
+
+router.route('/lostPassword')
+  .post(controller.lostPassword)
+
 export default router

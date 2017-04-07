@@ -60,6 +60,18 @@ const login = (req, res, next) => {
     .catch(next)
 }
 
+const lostPassword = (req, res, next) => {
+  const { email } = req.body
+  Users.findOne({ email })
+    .then((user) => {
+      if (user) {
+        // process reset password here
+      }
+    })
+    .then(() => res.json({ message: 'if a user with that email exists, we will send password reset instructions to that address' }))
+    .catch(next)
+}
+
 const usersController = {
   getList,
   getItem,
@@ -67,6 +79,7 @@ const usersController = {
   updateItem,
   deleteItem,
   login,
+  lostPassword,
 }
 
 export default usersController

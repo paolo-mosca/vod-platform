@@ -68,4 +68,6 @@ export default {
   fetchUsersEndpoint: () => '/api/users/',
   createUserEndpoint: () => '/api/users/',
   fetchUserEndpoint: (id: string) => `/api/users/${id}`,
+  loginEndpoint: () => '/api/users/login',
+  lostPasswordEndpoint: () => '/api/users/lostPassword',
 }

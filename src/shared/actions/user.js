@@ -2,23 +2,27 @@
 
 import 'isomorphic-fetch'
 import { createAction } from 'redux-actions'
+import { SubmissionError } from 'redux-form'
 
 import routes from '../routes'
+import http from '../utils/http'
 
-export const UPDATE_EMAIL_INPUT = 'UPDATE_EMAIL_INPUT'
-export const updateEmailInput = createAction(UPDATE_EMAIL_INPUT)
+export const GO_TO_LOGIN = 'GO_TO_LOGIN'
+export const goToLogin = createAction(GO_TO_LOGIN)
+export const GO_TO_SIGNUP = 'GO_TO_SIGNUP'
+export const goToSignup = createAction(GO_TO_SIGNUP)
+export const GO_TO_LOST_PASSWORD = 'GO_TO_LOST_PASSWORD'
+export const goToLostPassword = createAction(GO_TO_LOST_PASSWORD)
+export const CLOSE_MODAL = 'CLOSE_MODAL'
+export const closeModal = createAction(CLOSE_MODAL)
 
 export const CREATE_USER = 'CREATE_USER'
 export const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS'
-export const CREATE_USER_FAILURE = 'CREATE_USER_FAILURE'
-
 export const createUserRequest = createAction(CREATE_USER)
 export const createUserSuccess = createAction(CREATE_USER_SUCCESS)
-export const createUserFailure = createAction(CREATE_USER_FAILURE)
-
 export const createUser = (user: Object) => (dispatch: Function) => {
   dispatch(createUserRequest(user))
-  fetch(routes.createUserEndpoint(), {
+  return http(routes.createUserEndpoint(), {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -26,10 +30,48 @@ export const createUser = (user: Object) => (dispatch: Function) => {
     },
     body: JSON.stringify(user),
   })
-  .then((res) => {
-    if (!res.ok) throw new Error(res.statusText)
-    return res.json()
+    .then(res => dispatch(createUserSuccess(res)))
+    .catch((err) => {
+      throw new SubmissionError({ _error: err })
+    })
+}
+
+export const LOGIN = 'LOGIN'
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+export const loginRequest = createAction(LOGIN)
+export const loginSuccess = createAction(LOGIN_SUCCESS)
+export const login = ({ email, password }: Object) => (dispatch: Function) => {
+  dispatch(loginRequest({ email, password }))
+  return fetch(routes.loginEndpoint(), {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, password }),
   })
-  .then(res => dispatch(createUserSuccess(res)))
-  .catch(err => dispatch(createUserFailure(err)))
+  .then(res => dispatch(loginSuccess(res)))
+  .catch((err) => {
+    throw new SubmissionError({ _error: err })
+  })
+}
+
+export const LOST_PASSWORD = 'LOST_PASSWORD'
+export const LOST_PASSWORD_SUCCESS = 'LOST_PASSWORD_SUCCESS'
+export const lostPasswordRequest = createAction(LOST_PASSWORD)
+export const lostPasswordSuccess = createAction(LOST_PASSWORD_SUCCESS)
+export const lostPassword = ({ email }: Object) => (dispatch: Function) => {
+  dispatch(lostPasswordRequest())
+  return fetch(routes.lostPasswordEndpoint(), {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email }),
+  })
+    .then(res => dispatch(lostPasswordSuccess(res)))
+    .catch((err) => {
+      throw new SubmissionError({ _error: err })
+    })
 }

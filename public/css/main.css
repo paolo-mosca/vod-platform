@@ -717,3 +717,105 @@ nav {
   font-size: 14px;
   font-style: italic;
 }
+
+
+/****** MODAL *********/
+.modal-wrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, .9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  border: 1px solid gray;
+  width: 400px;
+  padding: 10px 20px;
+  background: #fff;
+}
+
+.modal-fb-button {
+  display: block;
+  margin: 10px auto;
+}
+
+.modal-or {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: gray;
+}
+
+.modal-form {
+  margin: 0 auto 10px;
+  width: 200px;
+}
+
+.modal-form input,
+.modal-form button {
+  width: 100%;
+}
+
+.modal-toggle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-toggle-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: blue;
+}
+
+.modal-footer {
+  color: #dbd3d3;
+  font-size: 12px;
+}
+
+.modal-optout {
+  margin-top: 10px;
+}
+/***** forms *****/
+.input-container {
+  position: relative;
+  padding-bottom: 17px;
+  margin-bottom: 5px;
+}
+
+.input, .button {
+  border-radius: 3px;
+  border: 1px solid;
+  padding: 5px;
+  font-size: 16px;
+  display: block;
+}
+
+.input {
+  font-weight: lighter;
+  border-color: #e7e7e7;
+}
+
+.button {
+  font-weight: bold;
+  border-color: rgba(250, 255, 109, 1);
+  background-color: rgba(250, 255, 109, 1);
+  cursor: pointer;
+}
+
+.input-error {
+  position: absolute;
+  color: red;
+  bottom: 0;
+  left: 0;
+  font-size: 10px;
+}
+
+.form-error {
+  color: red;
+}

@@ -14,6 +14,7 @@ import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
 import NotFoundPage from './pages/NotFoundPage'
 import HeaderContainer from './containers/HeaderContainer'
+import AuthModalContainer from './containers/AuthModalContainer'
 import Footer from './components/Footer'
 
 const App = () =>
@@ -32,6 +33,7 @@ const App = () =>
       </Switch>
     </div>
     <Footer />
+    <AuthModalContainer />
   </div>
 
 export default App

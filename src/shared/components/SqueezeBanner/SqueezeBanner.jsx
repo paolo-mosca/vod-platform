@@ -1,28 +1,31 @@
 // @flow
 
 import React from 'react'
+import { reduxForm, Field } from 'redux-form'
+
+import { validateRequired, validateEmail } from '../../validations'
+import RenderField from '../RenderField'
 
 type Props = {
   email: ?string,
-  emailInput: string,
-  updateEmailInput: Function,
-  onSubmit: Function
+  onSubmit: Function,
+  handleSubmit: Function,
 };
 
-const SqueezeBanner = ({ email, emailInput, updateEmailInput, onSubmit }: Props) => {
+const SqueezeBanner = ({ email, handleSubmit }: Props) => {
   if (email) return null
   return (
     <div className="squeeze-banner">
       <h1>Learn with chefs</h1>
       <p>Attend to our live MasterClasses or watch the recorded video</p>
-      <form onSubmit={(evt) => { evt.preventDefault(); onSubmit(emailInput) }} className="form-email">
-        <input
+      <form onSubmit={handleSubmit} className="form-email">
+        <Field
           type="email"
-          onChange={evt => updateEmailInput(evt.target.value)}
-          value={emailInput}
+          name="email"
           placeholder="I want to cook! Take my email!"
           className="squeeze-banner-input"
-          required
+          component={RenderField}
+          validate={[validateRequired, validateEmail]}
         />
         <button className="squeeze-banner-button">Get started for FREE</button>
       </form>
@@ -30,4 +33,6 @@ const SqueezeBanner = ({ email, emailInput, updateEmailInput, onSubmit }: Props)
   )
 }
 
-export default SqueezeBanner
+export default reduxForm({
+  form: 'squeeze',
+})(SqueezeBanner)
