@@ -1,4 +1,8 @@
-const parseJSON = response =>
+// @flow
+
+import 'isomorphic-fetch'
+
+const parseJSON = (response: Object) =>
   new Promise(resolve => response.json()
     .then(json => resolve({
       status: response.status,
@@ -6,7 +10,7 @@ const parseJSON = response =>
       json,
     })))
 
-const request = (endpoint, options) =>
+const request = (endpoint: string, options: Object) =>
   new Promise((resolve, reject) => {
     fetch(endpoint, options)
       .then(parseJSON)

@@ -1,6 +1,5 @@
 // @flow
 
-import 'isomorphic-fetch'
 import { createAction } from 'redux-actions'
 import { SubmissionError } from 'redux-form'
 
@@ -33,7 +32,7 @@ export const loginRequest = createAction(LOGIN)
 export const loginSuccess = createAction(LOGIN_SUCCESS)
 export const login = ({ email, password }: Object) => (dispatch: Function) => {
   dispatch(loginRequest({ email, password }))
-  return fetch(routes.loginEndpoint(), {
+  return http(routes.loginEndpoint(), {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -53,7 +52,7 @@ export const lostPasswordRequest = createAction(LOST_PASSWORD)
 export const lostPasswordSuccess = createAction(LOST_PASSWORD_SUCCESS)
 export const lostPassword = ({ email }: Object) => (dispatch: Function) => {
   dispatch(lostPasswordRequest())
-  return fetch(routes.lostPasswordEndpoint(), {
+  return http(routes.lostPasswordEndpoint(), {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -67,8 +66,8 @@ export const lostPassword = ({ email }: Object) => (dispatch: Function) => {
     })
 }
 
-export const SIGNOUT = 'LOGOUT'
-export const signout = createAction(SIGNOUT)
+export const LOGOUT = 'LOGOUT'
+export const logout = createAction(LOGOUT)
 
 export const SYNC_USER_FROM_LS = 'SYNC_USER_FROM_LS'
 export const syncUserFromLs = createAction(SYNC_USER_FROM_LS)

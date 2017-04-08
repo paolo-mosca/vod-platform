@@ -1,6 +1,6 @@
 // @flow
 
-import { CREATE_USER_SUCCESS, SIGNOUT, LOGIN_SUCCESS, LOST_PASSWORD_SUCCESS } from '../actions/user'
+import { CREATE_USER_SUCCESS, LOGOUT, LOGIN_SUCCESS, LOST_PASSWORD_SUCCESS } from '../actions/user'
 import { GO_TO_LOGIN, GO_TO_SIGNUP, GO_TO_LOST_PASSWORD, CLOSE_MODAL } from '../actions/modal'
 
 const initialState = {
@@ -21,7 +21,7 @@ const modalReducer = (state: Object = initialState, action: { type: string, payl
       return {
         status: 'closed',
       }
-    case SIGNOUT:
+    case LOGOUT:
       return {
         status: 'closed',
       }

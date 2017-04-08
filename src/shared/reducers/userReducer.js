@@ -1,6 +1,6 @@
 // @flow
 
-import { CREATE_USER_SUCCESS, SIGNOUT, LOGIN_SUCCESS, SYNC_USER_FROM_LS } from '../actions/user'
+import { CREATE_USER_SUCCESS, LOGOUT, LOGIN_SUCCESS, SYNC_USER_FROM_LS } from '../actions/user'
 
 const initialState = {}
 
@@ -16,7 +16,7 @@ const userReducer = (state: Object = initialState, action: { type: string, paylo
         ...state,
         ...action.payload,
       }
-    case SIGNOUT:
+    case LOGOUT:
       return {}
     case SYNC_USER_FROM_LS:
       return {
