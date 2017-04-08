@@ -6,6 +6,7 @@ import { fetchRecipes } from '../actions/recipes'
 import RecipeList from '../components/RecipeList'
 
 const mapStateToProps = state => ({
+  user: state.user,
   list: state.recipes.list,
   isLoadingList: state.recipes.isLoadingList,
   loadingListError: state.recipes.loadingListError,
