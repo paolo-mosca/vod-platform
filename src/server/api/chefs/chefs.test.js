@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import request from 'supertest-as-promised'
 
 import server from '../../'
@@ -8,76 +7,46 @@ import testUtils from '../../serverUtils/serverTestUtils'
 
 const app = request(server)
 
-test('api/chefs/getList', done => app.get(routes.fetchChefsEndpoint())
+test('api/chefs/getList', () => app.get(routes.fetchChefsEndpoint())
   .then((resp) => {
     expect(resp.body).toEqual(expect.any(Array))
     expect(resp.body).toHaveLength(chefs.length)
-    done()
-  })
-  .catch((err) => {
-    console.error(err)
-    done()
   }),
 )
 
-test('api/chefs/getItem', done => app.get(routes.fetchChefEndpoint(chefs[0]._id))
+test('api/chefs/getItem', () => app.get(routes.fetchChefEndpoint(chefs[0]._id))
   .set(...testUtils.adminAuthHeader)
   .then((resp) => {
     expect(resp.body).toEqual(expect.objectContaining(chefs[0]))
-    done()
-  })
-  .catch((err) => {
-    console.error(err)
-    done()
   }),
 )
 
-test('api/chefs/updateItem (admin, success)', done => app.put(routes.updateChefEndpoint(chefs[0]._id))
+test('api/chefs/updateItem (admin, success)', () => app.put(routes.updateChefEndpoint(chefs[0]._id))
   .set(...testUtils.adminAuthHeader)
   .send({ name: 'mahalo' })
   .then((resp) => {
     expect(resp.status).toBe(204)
-    done()
-  })
-  .catch((err) => {
-    console.error(err)
-    done()
   }),
 )
 
-test('api/chefs/updateItem (user, fail)', done => app.put(routes.updateChefEndpoint(chefs[0]._id))
+test('api/chefs/updateItem (user, fail)', () => app.put(routes.updateChefEndpoint(chefs[0]._id))
   .set(...testUtils.userAuthHeader)
   .send({ name: 'mahalo' })
   .then((resp) => {
     expect(resp.status).toBe(401)
-    done()
-  })
-  .catch((err) => {
-    console.error(err)
-    done()
   }),
 )
 
-test('api/chefs/deleteItem (admin, success)', done => app.put(routes.deleteChefEndpoint(chefs[0]._id))
+test('api/chefs/deleteItem (admin, success)', () => app.put(routes.deleteChefEndpoint(chefs[0]._id))
   .set(...testUtils.adminAuthHeader)
   .then((resp) => {
     expect(resp.status).toBe(204)
-    done()
-  })
-  .catch((err) => {
-    console.error(err)
-    done()
   }),
 )
 
-test('api/chefs/deleteItem (user, fail)', done => app.put(routes.deleteChefEndpoint(chefs[0]._id))
+test('api/chefs/deleteItem (user, fail)', () => app.put(routes.deleteChefEndpoint(chefs[0]._id))
   .set(...testUtils.userAuthHeader)
   .then((resp) => {
     expect(resp.status).toBe(401)
-    done()
-  })
-  .catch((err) => {
-    console.error(err)
-    done()
   }),
 )

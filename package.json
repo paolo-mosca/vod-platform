@@ -7,14 +7,17 @@
     "prod:start": "cross-env NODE_ENV=production pm2 start lib/server && pm2 logs",
     "prod:stop": "pm2 delete server",
     "lint": "eslint src webpack.config.babel.js",
-    "ut": "jest",
-    "test": "yarn lint && flow"
+    "ut": "jest --runInBand --forceExit",
+    "test": "yarn lint && flow && yarn ut"
   },
   "git": {
     "scripts": {
       "pre-commit": "yarn test",
       "pre-push": "yarn test && yarn prod:build"
     }
+  },
+  "jest": {
+    "testPathIgnorePatterns": ["recipes.test.js"]
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
