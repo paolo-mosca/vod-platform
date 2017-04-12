@@ -57,6 +57,10 @@ body {
   font: 300 16px/22px 'Roboto', 'Nunito', Helvetica, Arial, sans-serif;
 }
 
+button, a {
+  cursor: pointer;
+}
+
 
 /*
   ========================================
@@ -328,26 +332,90 @@ a {
   Primary header
   ========================================
 */
-.navigation__header {
-  width: 100%;
+
+.header {
   background-color: #f8f8f8;
   border-bottom: 1px solid #e7e7e7;
   padding-top: 10px;
 }
 
-.primary-nav {
-  font-size: 16px;
-  font-weight: bold;
+.header > .container {
+  display: flex;
+  justify-content: space-between;
 }
-.keychn-logo {
+
+.logo {
   width: 10%;
   min-width: 85px;
-  vertical-align: middle;
-  float: left;
+  display: block;
+}
+
+.logo img {
+  max-width: 100%;
+}
+
+.nav-primary {
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-primary-item {
+  height: auto;
+}
+
+.nav-primary-register {
+  color: green;
+}
+
+.nav-primary-user {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  position: relative;
+}
+
+.nav-primary-user-menu {
+  position: absolute;
+  display: none;
+  top: 55px;
+  padding-top: 15px;
+  background: #fff;
+  text-align: center;
+  padding: 10px 15px;
+  z-index: 10;
+  right: -50px;
+  width: 140px;
+}
+
+.nav-primary-user-menu::before {
+  content: '';
+  margin-right: auto;
+  margin-left: auto;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -15px;
+  left: 0;
+  right: 0;
+  border-bottom: 15px solid #fff;
+  border-right: 38px solid transparent;
+  border-left: 38px solid transparent;
+}
+
+.nav-primary-user:hover .nav-primary-user-menu {
+  display: block;
+}
+
+.nav-primary-user-menu > * {
+  white-space: nowrap;
 }
 
 @media only screen and (max-width : 490px) {
-  .keychn-logo {
+  .logo {
     display: block;
     float: none;
     margin: 0 auto;
@@ -377,41 +445,40 @@ a {
     width: 100%;
 }
 
-.secondary-header {
+.squeeze-banner {
   width: 100vw;
   position: relative;
   margin-left: -50vw;
   left: 50%;
   margin-top: 10px;
   text-align: center;
-  /*background-image: url('../img/imageheader.png');*/
   background-color: tomato;
   padding: 15px 0;
 }
 
-.secondary-header h1, .secondary-header p {
+.squeeze-banner h1, .squeeze-banner p {
   color: white;
 }
-.secondary-header h1 {
+.squeeze-banner h1 {
   margin: 5px;
   font: 64px 'Roboto', sans-serif;
   font-weight: 300;
 }
-.secondary-header p {
+.squeeze-banner p {
   font: 18px 'Roboto', sans-serif;
   font-weight: 400;
 }
 .form-email {
   margin-bottom: 10px;
 }
-#email-value, #submit-email {
+.squeeze-banner-input, .squeeze-banner-button {
   text-align: center;
   border-radius: 3px;
   border: 1px solid;
   padding: 5px;
   margin: 0 5px;
 }
-#email-value {
+.squeeze-banner-input {
   font: 16px 'Roboto', sans-serif;
   font-weight: lighter;;
   width: 250px;
@@ -419,11 +486,11 @@ a {
 }
 
 @media only screen and (max-width : 470px) {
-  #email-value  {
+  .squeeze-banner-input  {
     margin-bottom: 5px;
   }
 }
-#submit-email {
+.squeeze-banner-button {
   color: black;
   font: 16px 'Roboto', sans-serif;
   font-weight: bold;
@@ -453,9 +520,20 @@ nav {
   padding: 20px 0;
   background-color: #f8f8f8;
   border-top: 1px solid #e7e7e7;
-  /*position:absolute;
-  bottom:0;
-  width: 100%;*/
+}
+
+.primary-footer > .nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.primary-footer-left {
+  display: flex;
+}
+
+.primary-footer-left .social-icons {
+  display: flex;
 }
 
 .primary-footer small {
@@ -465,7 +543,17 @@ nav {
 }
 
 .logo-social-media {
-  max-width: 20px;
+  width: 20px;
+}
+
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;  
+}
+
+.site-content {
+  flex: 1;
 }
 
 
@@ -696,4 +784,142 @@ nav {
 .step-tip {
   font-size: 14px;
   font-style: italic;
+}
+
+
+/****** MODAL *********/
+.modal-wrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, .9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  border: 1px solid gray;
+  width: 400px;
+  padding: 10px 20px;
+  background: #fff;
+}
+
+.modal-fb-button {
+  display: block;
+  margin: 10px auto;
+}
+
+.modal-or {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: gray;
+}
+
+.modal-form {
+  margin: 0 auto 10px;
+  width: 200px;
+}
+
+.modal-form input,
+.modal-form button {
+  width: 100%;
+}
+
+.modal-toggle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-toggle-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: blue;
+}
+
+.modal-footer {
+  color: #dbd3d3;
+  font-size: 12px;
+}
+
+.modal-optout {
+  margin-top: 10px;
+}
+
+.prompt-signup-title {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.prompt-signup-yearly {
+  text-align: center;
+  display: block;
+}
+
+.prompt-signup-yearly-price {
+  font-size: 25px;
+}
+
+.prompt-signup-or {
+  text-align: center;
+}
+
+.prompt-signup-lifetime {
+  text-align: center;
+  background: yellow;
+  display: block;
+}
+
+.prompt-signup-lifetime-price {
+  font-size: 25px;
+}
+
+.payment-form-title {
+  text-align: center;
+}
+/***** forms *****/
+.input-container {
+  position: relative;
+  padding-bottom: 17px;
+  margin-bottom: 5px;
+}
+
+.input, .button {
+  border-radius: 3px;
+  border: 1px solid;
+  padding: 5px;
+  font-size: 16px;
+  display: block;
+}
+
+.input {
+  font-weight: lighter;
+  border-color: #e7e7e7;
+}
+
+.button {
+  font-weight: bold;
+  border-color: rgba(250, 255, 109, 1);
+  background-color: rgba(250, 255, 109, 1);
+  cursor: pointer;
+}
+
+.input-error {
+  position: absolute;
+  color: red;
+  bottom: 0;
+  left: 0;
+  font-size: 10px;
+}
+
+.form-error {
+  color: red;
+}
+/***** utils *****/
+.text-center {
+  text-align: center;
 }

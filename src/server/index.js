@@ -3,8 +3,9 @@
 import express from 'express'
 import mongoose from 'mongoose'
 
-import seed from './serverUtils/seed'
 import { STATIC_PATH } from '../shared/config'
+
+import seed from './serverUtils/seed'
 import serverConfig from './serverConfig'
 import serverLogger from './serverUtils/serverLogger'
 import pageRouter from './pageRouter'

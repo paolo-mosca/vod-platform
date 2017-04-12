@@ -1,7 +1,6 @@
 import deasync from 'deasync'
-import serverLogger from './serverLogger'
-import serverConfig from '../serverConfig'
 
+import serverConfig from '../serverConfig'
 // models
 import Categories from '../api/categories/categoriesModel'
 import Tags from '../api/tags/tagsModel'
@@ -15,6 +14,7 @@ import Recipes from '../api/recipes/recipesModel'
 import Users from '../api/users/usersModel'
 import auth from '../auth'
 
+import serverLogger from './serverLogger'
 // data
 import { users, tags, skills, ingredients, categories, equipments,
   chefs, learningPaths, recipes } from './seedData'

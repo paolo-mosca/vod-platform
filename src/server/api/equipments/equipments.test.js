@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import request from 'supertest-as-promised'
+
 import server from '../../'
 import routes from '../../../shared/routes'
 import { equipments } from '../../serverUtils/seedData'

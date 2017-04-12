@@ -10,8 +10,13 @@
   "plugins": [
     "flowtype"
   ],
+  "settings": {
+    "polyfills": ["fetch"]
+  },
   "rules": {
+    "import/order": [2, {"newlines-between": "always"}],
     "semi": [2, "never"],
+    "jsx-a11y/no-static-element-interactions": 0,
     "no-unexpected-multiline": 2,
     "no-param-reassign": ["error", { "ignorePropertyModificationsFor": ["req"] }],
     "no-underscore-dangle": [2, { "allow": ["_id"] }]

@@ -2,8 +2,9 @@
 
 import express from 'express'
 
-import controller from './learningPathsController'
 import auth from '../../auth'
+
+import controller from './learningPathsController'
 
 const router = express.Router()
 

@@ -5,7 +5,6 @@ import bcrypt from 'bcryptjs'
 const UsersSchema = new Schema({
   name: {
     type: String,
-    required: true,
     min: 2,
   },
 
@@ -18,7 +17,6 @@ const UsersSchema = new Schema({
   password: {
     type: String,
     select: false,
-    required: true,
   },
 
   recipes: {
@@ -52,6 +50,10 @@ const UsersSchema = new Schema({
 }, { minimize: false })
 
 function preSave(next) {
+  if (!this.password) {
+    next()
+    return
+  }
   bcrypt.hash(this.password, 10, (err, hash) => {
     if (err) {
       next(err)

@@ -2,8 +2,12 @@
 
 export default {
   RECIPE_LIST_PAGE: '/',
+  RECIPE_CREATE_PAGE: '/create',
+  ABOUT_PAGE: '/about',
+  TERMS_PAGE: '/terms',
+  PRIVACY_PAGE: '/privacy',
 
-  recipeItem: (id: ?string) => `/recipes/${id || ':id'}`,
+  recipeDetailPage: (id: ?string) => `/recipes/${id || ':id'}`,
 
   // tags
   fetchTagsEndpoint: () => '/api/tags/',
@@ -57,7 +61,7 @@ export default {
   // recipes
   fetchRecipesEndpoint: () => '/api/recipes/',
   createRecipeEndpoint: () => '/api/recipes/',
-  fetchRecipeEndpoint: (id: string) => `/api/recipes/${id}`,
+  fetchRecipeDetailsEndpoint: (id: string) => `/api/recipes/${id}`,
   updateRecipeEndpoint: (id: string) => `/api/recipes/${id}`,
   deleteRecipeEndpoint: (id: string) => `/api/recipes/${id}`,
 
@@ -65,4 +69,6 @@ export default {
   fetchUsersEndpoint: () => '/api/users/',
   createUserEndpoint: () => '/api/users/',
   fetchUserEndpoint: (id: string) => `/api/users/${id}`,
+  loginEndpoint: () => '/api/users/login',
+  lostPasswordEndpoint: () => '/api/users/lostPassword',
 }

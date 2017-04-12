@@ -1,7 +1,8 @@
 /* eslint-disable */
 // no var needed here, colors will attached colors to String.prototype
-import serverConfig from '../serverConfig'
 import 'colors'
+
+import serverConfig from '../serverConfig'
 
 // create a noop (no operation) function for when loggin is disabled
 const noop = function () {}

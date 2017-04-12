@@ -1,6 +1,7 @@
 // @flow
 
-import { FETCH_RECIPES, FETCH_RECIPES_SUCCESS, FETCH_RECIPES_FAILURE } from '../actions/recipes'
+import { FETCH_RECIPES, FETCH_RECIPES_SUCCESS, FETCH_RECIPES_FAILURE,
+  FETCH_RECIPE_DETAILS, FETCH_RECIPE_DETAILS_SUCCESS, FETCH_RECIPE_DETAILS_FAILURE } from '../actions/recipes'
 
 const initialState = {
   list: [],
@@ -30,6 +31,26 @@ const recipesReducer = (state: Object = initialState, action: { type: string, pa
         ...state,
         isLoadingList: false,
         loadingListError: action.payload,
+      }
+    case FETCH_RECIPE_DETAILS:
+      return {
+        ...state,
+        isLoadingDetail: true,
+        loadingDetailError: null,
+      }
+    case FETCH_RECIPE_DETAILS_SUCCESS:
+      return {
+        ...state,
+        isLoadingDetail: false,
+        detail: Object.assign({}, state.detail, {
+          [action.payload._id]: action.payload,
+        }),
+      }
+    case FETCH_RECIPE_DETAILS_FAILURE:
+      return {
+        ...state,
+        isLoadingDetail: false,
+        loadingDetailError: action.payload,
       }
     default:
       return state

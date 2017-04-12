@@ -2,8 +2,9 @@
 
 import express from 'express'
 
-import controller from './tagsController'
 import auth from '../../auth'
+
+import controller from './tagsController'
 
 const router = express.Router()
 

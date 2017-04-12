@@ -51,11 +51,13 @@
     "body-parser": "^1.17.1",
     "compression": "^1.6.2",
     "cors": "^2.8.1",
+    "custom-error-generator": "^7.0.0",
     "deasync": "^0.1.9",
     "express": "^4.15.2",
     "express-jwt": "^5.1.0",
     "isomorphic-fetch": "^2.2.1",
     "jsonwebtoken": "^7.3.0",
+    "lodash.capitalize": "^4.2.1",
     "mongoose": "^4.9.1",
     "mongoose-type-email": "^1.0.3",
     "mongoose-unique-validator": "^1.0.4",
@@ -69,6 +71,7 @@
     "react-router-dom": "next",
     "redux": "^3.6.0",
     "redux-actions": "^2.0.1",
+    "redux-form": "^6.6.1",
     "redux-logger": "^2.8.2",
     "redux-thunk": "^2.2.0"
   }

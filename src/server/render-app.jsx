@@ -5,9 +5,11 @@ import { Provider } from 'react-redux'
 import ReactDOMServer from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom'
 import Helmet from 'react-helmet'
+
 import { APP_CONTAINER_CLASS, STATIC_PATH, WDS_PORT } from '../shared/config'
 import { isProd } from '../shared/util'
-import App from '../shared/app'
+import App from '../shared/App'
+
 import initStore from './init-store'
 
 const renderApp = (location: string, plainPartialState: ?Object, routerContext: ?Object = {}) => {
@@ -26,9 +28,7 @@ const renderApp = (location: string, plainPartialState: ?Object, routerContext: 
       <head>
         ${head.title}
         ${head.meta}
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto|Nunito" rel="stylesheet" />
-        <link rel="stylesheet" href="${STATIC_PATH}/css/main.css">
+        <link href="${STATIC_PATH}/css/main.css" rel="stylesheet" />
       </head>
       <body>
         <div class="${APP_CONTAINER_CLASS}">${appHtml}</div>
