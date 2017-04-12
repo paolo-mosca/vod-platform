@@ -42,3 +42,6 @@ export const fetchRecipeDetails = (id: string) => (dispatch: Function) => {
     .then(res => dispatch(fetchRecipeDetailsSuccess(res)))
     .catch(err => dispatch(fetchRecipeDetailsFailure(err.message)))
 }
+
+export const NO_RECIPE_ACCESS = 'NO_RECIPE_ACCESS'
+export const noRecipeAccess = createAction(NO_RECIPE_ACCESS)

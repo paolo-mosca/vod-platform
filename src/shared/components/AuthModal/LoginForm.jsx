@@ -9,7 +9,6 @@ import RenderField from '../RenderField'
 type Props = {
   onGoToSignupClick: Function,
   onGoToForgotPasswordClick: Function,
-  onSubmit: Function,
   handleSubmit: Function,
   submitting: boolean,
   error: ?any,

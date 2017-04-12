@@ -839,6 +839,38 @@ nav {
 .modal-optout {
   margin-top: 10px;
 }
+
+.prompt-signup-title {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.prompt-signup-yearly {
+  text-align: center;
+  display: block;
+}
+
+.prompt-signup-yearly-price {
+  font-size: 25px;
+}
+
+.prompt-signup-or {
+  text-align: center;
+}
+
+.prompt-signup-lifetime {
+  text-align: center;
+  background: yellow;
+  display: block;
+}
+
+.prompt-signup-lifetime-price {
+  font-size: 25px;
+}
+
+.payment-form-title {
+  text-align: center;
+}
 /***** forms *****/
 .input-container {
   position: relative;
@@ -876,4 +908,8 @@ nav {
 
 .form-error {
   color: red;
+}
+/***** utils *****/
+.text-center {
+  text-align: center;
 }

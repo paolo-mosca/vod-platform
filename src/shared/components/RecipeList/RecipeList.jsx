@@ -18,14 +18,16 @@ class RecipeList extends React.Component {
     isLoadingList: boolean,
     user: {},
     loadingListError: ?string,
-    fetchRecipes: Function
+    fetchRecipes: Function,
+    onNoRecipeAccessClick: Function,
   };
 
   validateAccess(evt: Object, recipeId: string) {
-    evt.preventDefault()
     if (hasAccessToRecipe(this.props.user, recipeId)) {
       return
     }
+    evt.preventDefault()
+    this.props.onNoRecipeAccessClick()
   }
 
   renderItem = (recipe: Object) => (
