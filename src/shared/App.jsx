@@ -10,10 +10,10 @@ import AuthModalContainer from './containers/AuthModalContainer'
 import Footer from './components/Footer'
 
 const App = () =>
-  <div className="main-container">
+  <div className="main-container site">
     <Helmet titleTemplate={`%s | ${APP_NAME}`} defaultTitle={APP_NAME} />
     <HeaderContainer />
-    <div className="container">
+    <div className="site-content container">
       <Routes />
     </div>
     <Footer />
