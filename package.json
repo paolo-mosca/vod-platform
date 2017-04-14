@@ -8,7 +8,8 @@
     "prod:stop": "pm2 delete server",
     "lint": "eslint src webpack.config.babel.js",
     "ut": "jest",
-    "test": "yarn lint && flow"
+    "test": "yarn lint && flow",
+    "generate": "rc-autocomplete"
   },
   "git": {
     "scripts": {
@@ -39,6 +40,7 @@
     "jest": "^19.0.2",
     "nodemon": "^1.11.0",
     "pm2": "^2.4.2",
+    "react-autocomplete-cli": "^0.0.3",
     "rimraf": "^2.6.1",
     "supertest": "^3.0.0",
     "supertest-as-promised": "^4.0.2",
