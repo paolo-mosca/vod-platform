@@ -44,13 +44,6 @@ const validateCredentials = (user, passwordInput) => {
   return user
 }
 
-// const prepareUser = (user) => {
-//   const formattedUser = user.toObject()
-//   delete formattedUser.password
-//   formattedUser.token = auth.signToken(user._id)
-//   return formattedUser
-// }
-
 const prepareUser = user => Object.assign({}, user.toObject(),
   { password: undefined }, { token: auth.signToken(user._id) },
 )
