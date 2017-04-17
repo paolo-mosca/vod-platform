@@ -9,6 +9,7 @@
     "ut": "jest --runInBand --forceExit",
     "test": "yarn lint && flow && yarn ut",
     "lint": "lint-staged",
+    "ci:test": "yarn eslint src/**/*.js webpack.config.babel.js && flow && yarn ut",
     "generate": "rc-autocomplete"
   },
   "git": {
