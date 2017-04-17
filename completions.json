@@ -1,0 +1,1293 @@
+{
+  "components": {
+    "AuthModal.jsx": {
+      "attributes": [
+        "modalStatus",
+        "onModalOverlayClick",
+        "onGoToLoginClick",
+        "onGoToSignupClick",
+        "onGoToForgotPasswordClick",
+        "onLogin",
+        "onSignup",
+        "onCloseModal",
+        "onLostPassword",
+        "onGoToYearlyPaymentClick",
+        "onGoToLifetimePaymentClick",
+        "onTogglePaymentModeClick"
+      ],
+      "props": {
+        "modalStatus": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onModalOverlayClick": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onGoToLoginClick": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onGoToSignupClick": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onGoToForgotPasswordClick": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onLogin": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onSignup": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onCloseModal": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onLostPassword": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onGoToYearlyPaymentClick": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onGoToLifetimePaymentClick": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onTogglePaymentModeClick": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "LoginForm.jsx": {
+      "attributes": [
+        "onGoToSignupClick",
+        "onGoToForgotPasswordClick",
+        "handleSubmit",
+        "submitting",
+        "error"
+      ],
+      "props": {
+        "onGoToSignupClick": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onGoToForgotPasswordClick": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "handleSubmit": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "submitting": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": true,
+          "description": ""
+        },
+        "error": {
+          "flowType": {
+            "name": "any",
+            "nullable": true
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "LostPasswordForm.jsx": {
+      "attributes": [
+        "onGoToSignupClick",
+        "onGoToLoginClick",
+        "handleSubmit",
+        "onSubmit",
+        "error"
+      ],
+      "props": {
+        "onGoToSignupClick": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onGoToLoginClick": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "handleSubmit": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onSubmit": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "error": {
+          "flowType": {
+            "name": "any",
+            "nullable": true
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "PaymentForm.jsx": {
+      "attributes": [
+        "mode",
+        "onTogglePaymentModeClick",
+        "submitting",
+        "error",
+        "handleSubmit"
+      ],
+      "props": {
+        "mode": {
+          "flowType": {
+            "name": "union",
+            "raw": "'yearly' | 'lifetime'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'yearly'"
+              },
+              {
+                "name": "literal",
+                "value": "'lifetime'"
+              }
+            ]
+          },
+          "required": true,
+          "description": ""
+        },
+        "onTogglePaymentModeClick": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "submitting": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": true,
+          "description": ""
+        },
+        "error": {
+          "flowType": {
+            "name": "any",
+            "nullable": true
+          },
+          "required": true,
+          "description": ""
+        },
+        "handleSubmit": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "PromptSignup.jsx": {
+      "attributes": [
+        "onCloseModal",
+        "onGoToYearlyPaymentClick",
+        "onGoToLifetimePaymentClick"
+      ],
+      "props": {
+        "onCloseModal": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onGoToYearlyPaymentClick": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onGoToLifetimePaymentClick": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "SignupForm.jsx": {
+      "attributes": [
+        "onGoToLoginClick",
+        "onGoToForgotPasswordClick",
+        "onSubmit",
+        "handleSubmit",
+        "error"
+      ],
+      "props": {
+        "onGoToLoginClick": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onGoToForgotPasswordClick": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onSubmit": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "handleSubmit": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "error": {
+          "flowType": {
+            "name": "any",
+            "nullable": true
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "Footer.jsx": {},
+    "Header.jsx": {
+      "attributes": [
+        "user",
+        "onSignout",
+        "onRegisterClick"
+      ],
+      "props": {
+        "user": {
+          "flowType": {
+            "name": "signature",
+            "type": "object",
+            "raw": "{\n  isAdmin: ?boolean,\n}",
+            "signature": {
+              "properties": [
+                {
+                  "key": "isAdmin",
+                  "value": {
+                    "name": "boolean",
+                    "nullable": true,
+                    "required": true
+                  }
+                }
+              ]
+            }
+          },
+          "required": true,
+          "description": ""
+        },
+        "onSignout": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onRegisterClick": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "CategoryList.jsx": {
+      "attributes": [
+        "categories"
+      ],
+      "props": {
+        "categories": {
+          "flowType": {
+            "name": "tuple",
+            "raw": "[{ name: string }]",
+            "elements": [
+              {
+                "name": "signature",
+                "type": "object",
+                "raw": "{ name: string }",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "name",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "Details.jsx": {
+      "attributes": [
+        "videoFullUrl",
+        "title",
+        "description",
+        "chef",
+        "categories"
+      ],
+      "props": {
+        "videoFullUrl": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "title": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "description": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "chef": {
+          "flowType": {
+            "name": "signature",
+            "type": "object",
+            "raw": "{\n  name: string,\n  thumbnailUrl: string,\n}",
+            "signature": {
+              "properties": [
+                {
+                  "key": "name",
+                  "value": {
+                    "name": "string",
+                    "required": true
+                  }
+                },
+                {
+                  "key": "thumbnailUrl",
+                  "value": {
+                    "name": "string",
+                    "required": true
+                  }
+                }
+              ]
+            }
+          },
+          "required": true,
+          "description": ""
+        },
+        "categories": {
+          "flowType": {
+            "name": "tuple",
+            "raw": "[{ name: string }]",
+            "elements": [
+              {
+                "name": "signature",
+                "type": "object",
+                "raw": "{ name: string }",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "name",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "EquipmentList.jsx": {
+      "attributes": [
+        "equipments"
+      ],
+      "props": {
+        "equipments": {
+          "flowType": {
+            "name": "tuple",
+            "raw": "[{ name: string }]",
+            "elements": [
+              {
+                "name": "signature",
+                "type": "object",
+                "raw": "{ name: string }",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "name",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "IngredientList.jsx": {
+      "attributes": [
+        "ingredients"
+      ],
+      "props": {
+        "ingredients": {
+          "flowType": {
+            "name": "tuple",
+            "raw": "[{\n  name: string,\n  quantity: number,\n  unit: string,\n}]",
+            "elements": [
+              {
+                "name": "signature",
+                "type": "object",
+                "raw": "{\n  name: string,\n  quantity: number,\n  unit: string,\n}",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "name",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    },
+                    {
+                      "key": "quantity",
+                      "value": {
+                        "name": "number",
+                        "required": true
+                      }
+                    },
+                    {
+                      "key": "unit",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "LearningPathList.jsx": {
+      "attributes": [
+        "paths"
+      ],
+      "props": {
+        "paths": {
+          "flowType": {
+            "name": "tuple",
+            "raw": "[{ name: string }]",
+            "elements": [
+              {
+                "name": "signature",
+                "type": "object",
+                "raw": "{ name: string }",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "name",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "RecipeDetail.jsx": {
+      "attributes": [
+        "videoFullUrl",
+        "title",
+        "description",
+        "chef",
+        "categories",
+        "tags",
+        "learningPaths",
+        "courseType",
+        "length",
+        "difficulty",
+        "servings",
+        "price",
+        "ingredients",
+        "steps",
+        "equipments",
+        "skills"
+      ],
+      "props": {
+        "videoFullUrl": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "title": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "description": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "chef": {
+          "flowType": {
+            "name": "signature",
+            "type": "object",
+            "raw": "{\n  name: string,\n  thumbnailUrl: string,\n}",
+            "signature": {
+              "properties": [
+                {
+                  "key": "name",
+                  "value": {
+                    "name": "string",
+                    "required": true
+                  }
+                },
+                {
+                  "key": "thumbnailUrl",
+                  "value": {
+                    "name": "string",
+                    "required": true
+                  }
+                }
+              ]
+            }
+          },
+          "required": true,
+          "description": ""
+        },
+        "categories": {
+          "flowType": {
+            "name": "tuple",
+            "raw": "[{ name: string }]",
+            "elements": [
+              {
+                "name": "signature",
+                "type": "object",
+                "raw": "{ name: string }",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "name",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "required": true,
+          "description": ""
+        },
+        "tags": {
+          "flowType": {
+            "name": "tuple",
+            "raw": "[{ name: string }]",
+            "elements": [
+              {
+                "name": "signature",
+                "type": "object",
+                "raw": "{ name: string }",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "name",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "required": true,
+          "description": ""
+        },
+        "learningPaths": {
+          "flowType": {
+            "name": "tuple",
+            "raw": "[{ name: string }]",
+            "elements": [
+              {
+                "name": "signature",
+                "type": "object",
+                "raw": "{ name: string }",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "name",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "required": true,
+          "description": ""
+        },
+        "courseType": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "length": {
+          "flowType": {
+            "name": "number"
+          },
+          "required": true,
+          "description": ""
+        },
+        "difficulty": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "servings": {
+          "flowType": {
+            "name": "number"
+          },
+          "required": true,
+          "description": ""
+        },
+        "price": {
+          "flowType": {
+            "name": "number"
+          },
+          "required": true,
+          "description": ""
+        },
+        "ingredients": {
+          "flowType": {
+            "name": "tuple",
+            "raw": "[{\n  name: string,\n  quantity: number,\n  unit: string,\n}]",
+            "elements": [
+              {
+                "name": "signature",
+                "type": "object",
+                "raw": "{\n  name: string,\n  quantity: number,\n  unit: string,\n}",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "name",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    },
+                    {
+                      "key": "quantity",
+                      "value": {
+                        "name": "number",
+                        "required": true
+                      }
+                    },
+                    {
+                      "key": "unit",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "required": true,
+          "description": ""
+        },
+        "steps": {
+          "flowType": {
+            "name": "tuple",
+            "raw": "[{\n  pictureUrl: string,\n  description: string,\n  tip: string,\n}]",
+            "elements": [
+              {
+                "name": "signature",
+                "type": "object",
+                "raw": "{\n  pictureUrl: string,\n  description: string,\n  tip: string,\n}",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "pictureUrl",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    },
+                    {
+                      "key": "description",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    },
+                    {
+                      "key": "tip",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "required": true,
+          "description": ""
+        },
+        "equipments": {
+          "flowType": {
+            "name": "tuple",
+            "raw": "[{ name: string }]",
+            "elements": [
+              {
+                "name": "signature",
+                "type": "object",
+                "raw": "{ name: string }",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "name",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "required": true,
+          "description": ""
+        },
+        "skills": {
+          "flowType": {
+            "name": "tuple",
+            "raw": "[{ name: string }]",
+            "elements": [
+              {
+                "name": "signature",
+                "type": "object",
+                "raw": "{ name: string }",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "name",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "SkillList.jsx": {
+      "attributes": [
+        "skills"
+      ],
+      "props": {
+        "skills": {
+          "flowType": {
+            "name": "tuple",
+            "raw": "[{ name: string }]",
+            "elements": [
+              {
+                "name": "signature",
+                "type": "object",
+                "raw": "{ name: string }",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "name",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "StepList.jsx": {
+      "attributes": [
+        "steps"
+      ],
+      "props": {
+        "steps": {
+          "flowType": {
+            "name": "tuple",
+            "raw": "[{\n  pictureUrl: string,\n  description: string,\n  tip: string,\n}]",
+            "elements": [
+              {
+                "name": "signature",
+                "type": "object",
+                "raw": "{\n  pictureUrl: string,\n  description: string,\n  tip: string,\n}",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "pictureUrl",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    },
+                    {
+                      "key": "description",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    },
+                    {
+                      "key": "tip",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "TagList.jsx": {
+      "attributes": [
+        "tags"
+      ],
+      "props": {
+        "tags": {
+          "flowType": {
+            "name": "tuple",
+            "raw": "[{ name: string }]",
+            "elements": [
+              {
+                "name": "signature",
+                "type": "object",
+                "raw": "{ name: string }",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "name",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "RecipeItem.jsx": {
+      "attributes": [
+        "title",
+        "description",
+        "categories",
+        "videoThumbnailUrl",
+        "chef"
+      ],
+      "props": {
+        "title": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "description": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "categories": {
+          "flowType": {
+            "name": "tuple",
+            "raw": "[{ name: string }]",
+            "elements": [
+              {
+                "name": "signature",
+                "type": "object",
+                "raw": "{ name: string }",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "name",
+                      "value": {
+                        "name": "string",
+                        "required": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "required": true,
+          "description": ""
+        },
+        "videoThumbnailUrl": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "chef": {
+          "flowType": {
+            "name": "signature",
+            "type": "object",
+            "raw": "{\n  name: string,\n  thumbnailUrl: string,\n}",
+            "signature": {
+              "properties": [
+                {
+                  "key": "name",
+                  "value": {
+                    "name": "string",
+                    "required": true
+                  }
+                },
+                {
+                  "key": "thumbnailUrl",
+                  "value": {
+                    "name": "string",
+                    "required": true
+                  }
+                }
+              ]
+            }
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "RecipeList.jsx": {
+      "attributes": [
+        "list",
+        "isLoadingList",
+        "user",
+        "loadingListError",
+        "fetchRecipes",
+        "onNoRecipeAccessClick"
+      ],
+      "props": {
+        "list": {
+          "flowType": {
+            "name": "tuple",
+            "raw": "[{}]",
+            "elements": [
+              {
+                "name": "signature",
+                "type": "object",
+                "raw": "{}",
+                "signature": {
+                  "properties": []
+                }
+              }
+            ]
+          },
+          "required": true,
+          "description": ""
+        },
+        "isLoadingList": {
+          "flowType": {
+            "name": "boolean"
+          },
+          "required": true,
+          "description": ""
+        },
+        "user": {
+          "flowType": {
+            "name": "signature",
+            "type": "object",
+            "raw": "{}",
+            "signature": {
+              "properties": []
+            }
+          },
+          "required": true,
+          "description": ""
+        },
+        "loadingListError": {
+          "flowType": {
+            "name": "string",
+            "nullable": true
+          },
+          "required": true,
+          "description": ""
+        },
+        "fetchRecipes": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "onNoRecipeAccessClick": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "RenderField.jsx": {
+      "attributes": [
+        "input",
+        "className",
+        "placeholder",
+        "type",
+        "meta"
+      ],
+      "props": {
+        "input": {
+          "flowType": {
+            "name": "any"
+          },
+          "required": true,
+          "description": ""
+        },
+        "className": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "placeholder": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "type": {
+          "flowType": {
+            "name": "string"
+          },
+          "required": true,
+          "description": ""
+        },
+        "meta": {
+          "flowType": {
+            "name": "signature",
+            "type": "object",
+            "raw": "{\n  touched: boolean,\n  error: ?string,\n}",
+            "signature": {
+              "properties": [
+                {
+                  "key": "touched",
+                  "value": {
+                    "name": "boolean",
+                    "required": true
+                  }
+                },
+                {
+                  "key": "error",
+                  "value": {
+                    "name": "string",
+                    "nullable": true,
+                    "required": true
+                  }
+                }
+              ]
+            }
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    },
+    "SqueezeBanner.jsx": {
+      "attributes": [
+        "email",
+        "onSubmit",
+        "handleSubmit"
+      ],
+      "props": {
+        "email": {
+          "flowType": {
+            "name": "string",
+            "nullable": true
+          },
+          "required": true,
+          "description": ""
+        },
+        "onSubmit": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        },
+        "handleSubmit": {
+          "flowType": {
+            "name": "Function"
+          },
+          "required": true,
+          "description": ""
+        }
+      }
+    }
+  }
+}
