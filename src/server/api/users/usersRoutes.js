@@ -23,4 +23,7 @@ router.route('/login')
 router.route('/lostPassword')
   .post(controller.lostPassword)
 
+router.route('/subscribe')
+  .post(auth.decodeToken, auth.getFreshUser, controller.subscribe)
+
 export default router

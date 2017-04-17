@@ -1,9 +1,12 @@
 import bcrypt from 'bcryptjs'
 import CustomError from 'custom-error-generator'
+import stripe from 'stripe'
 
 import auth from '../../auth'
 
 import Users from './usersModel'
+
+const stripeClient = stripe('sk_test_krssEMhM2HhOVA5yNOiQynbW')
 
 const getList = (req, res, next) => {
   Users.find()
@@ -69,6 +72,17 @@ const lostPassword = (req, res, next) => {
     .catch(next)
 }
 
+const subscribe = (req, res, next) => {
+  // maybe if the user already subscribed before and has a stripeCustomerId,
+  // no need for a token.
+  // TODO :: research cancellations
+  const { user } = req
+  const { mode, token } = req.body
+  Users.findByIdAndUpdate(user._id, { token })
+    .then(() => res.status(204).send())
+    .catch(next)
+}
+
 const usersController = {
   getList,
   getItem,
@@ -77,6 +91,7 @@ const usersController = {
   deleteItem,
   login,
   lostPassword,
+  subscribe,
 }
 
 export default usersController

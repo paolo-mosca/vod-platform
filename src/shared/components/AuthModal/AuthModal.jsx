@@ -21,12 +21,13 @@ type Props = {
   onGoToYearlyPaymentClick: Function,
   onGoToLifetimePaymentClick: Function,
   onTogglePaymentModeClick: Function,
+  onSubscribe: Function,
 };
 
 const AuthModal = ({
   modalStatus, onGoToLoginClick, onGoToSignupClick, onModalOverlayClick, onLostPassword, onLogin,
   onSignup, onGoToForgotPasswordClick, onGoToYearlyPaymentClick, onGoToLifetimePaymentClick,
-  onTogglePaymentModeClick, onCloseModal }: Props) => {
+  onTogglePaymentModeClick, onSubscribe, onCloseModal }: Props) => {
   if (modalStatus === 'closed') return null
   let component
   if (modalStatus === 'login') {
@@ -68,6 +69,7 @@ const AuthModal = ({
   if (modalStatus.match(/Payment/)) {
     component = (
       <PaymentForm
+        onSubscribe={onSubscribe}
         mode={modalStatus.substr(0, modalStatus.indexOf('Payment'))}
         onTogglePaymentModeClick={onTogglePaymentModeClick}
         onCloseModal={onCloseModal}

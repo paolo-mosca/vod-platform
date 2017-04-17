@@ -193,7 +193,7 @@ export const recipes = [paAmbTomquetRecipe]
 //     userId: 'seconduserid',
 //     created: 1461199199,
 //     _id: '56f61ff82bd2403e3e80310b',
-//   }, 
+//   },
 //   {
 //     title: 'Guacamole',
 //     slug: 'guacamole',
@@ -405,7 +405,7 @@ export const recipes = [paAmbTomquetRecipe]
 // ]
 
 // subscriptions
-const peterSubscription = { type: 'monthly', endsAt: getFutureDate(10), _id: '56f045d9cab8bfde77c236db' }
+const peterSubscription = { period: 'monthly', isActive: true }
 export const subscriptions = [peterSubscription]
 
 // users

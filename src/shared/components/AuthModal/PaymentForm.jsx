@@ -1,67 +1,86 @@
 // @flow
 
 import React from 'react'
-import { reduxForm, Field } from 'redux-form'
 import capitalize from 'lodash.capitalize'
 
 import { YEARLY_PAYMENT, LIFETIME_PAYMENT } from '../../constants'
-import RenderField from '../RenderField'
-import { validateRequired } from '../../validations'
 
 type Props = {
   mode: 'yearly' | 'lifetime',
   onTogglePaymentModeClick: Function,
-  submitting: boolean,
+  // submitting: boolean,
   error: ?any,
-  handleSubmit: Function,
+  onSubscribe: Function,
 };
 
-const PaymentForm = ({ mode, onTogglePaymentModeClick, submitting, error, handleSubmit }: Props) =>
-  <div className="modal-inner">
-    <div className="input-container">
-      <h3 className="payment-form-title">Get {capitalize(mode)} Access</h3>
-      <form onSubmit={handleSubmit} className="modal-form">
-        <Field
-          name="cc-holder-name"
-          placeholder="Cardholder name"
-          component={RenderField}
-          className="input"
-          validate={[validateRequired]}
-          type="text"
-        />
-        <Field
-          name="cc"
-          placeholder="Credit Card Number"
-          component={RenderField}
-          className="input"
-          validate={[validateRequired]}
-          type="text"
-        />
-        <Field
-          name="cc-holder-dob"
-          placeholder="MM/YY"
-          component={RenderField}
-          className="input"
-          validate={[validateRequired]}
-          type="text"
-        />
-        <Field
-          name="cvv"
-          placeholder="CVV"
-          component={RenderField}
-          className="input"
-          validate={[validateRequired]}
-          type="text"
-        />
-        <button className="button" disabled={submitting}>Pay {mode === 'yearly' ? YEARLY_PAYMENT : LIFETIME_PAYMENT} €</button>
-        { error && <span className="form-error">{error}</span> }
-      </form>
-      <div className="text-center">
-        <button onClick={onTogglePaymentModeClick} className="modal-toggle-link">Switch to { mode === 'yearly' ? 'lifetime' : 'yearly'} payment</button>
-      </div>
-    </div>
-  </div>
 
-export default reduxForm({
-  form: 'payment',
-})(PaymentForm)
+class PaymentForm extends React.Component {
+
+  state = {
+    error: null,
+  }
+
+  componentDidMount() {
+    this.stripe = window.Stripe('pk_test_U8vqf0SvU5nMd5thuggjVLLQ')
+    const elements = this.stripe.elements()
+    // Custom styling can be passed to options when creating an Element.
+    const style = {
+      base: {
+        // Add your base input styles here. For example:
+        fontSize: '16px',
+        lineHeight: '24px',
+      },
+    }
+
+    // Create an instance of the card Element
+    this.card = elements.create('card', { style })
+
+    // Add an instance of the card Element into the `card-element` <div>
+    this.card.mount('#card-element')
+    this.card.addEventListener('change', ({ error }) => {
+      if (error) this.setState({ error: error.message })
+    })
+  }
+
+  onSubmit = (evt: Object) => {
+    evt.preventDefault()
+    this.stripe.createToken(this.card)
+      .then(({ token, error }) => {
+        if (error) {
+          this.setState({ error: error.message })
+          return
+        }
+        this.props.onSubscribe({ token, mode: this.props.mode })
+      })
+      .catch(error => this.setState({ error }))
+  }
+
+  stripe: Object
+  card: Object
+
+  props: Props
+
+  render() {
+    const { mode, onTogglePaymentModeClick, submitting, error } = this.props
+    return (
+      <div className="modal-inner">
+        <div className="input-container">
+          <h3 className="payment-form-title">Get {capitalize(mode)} Access</h3>
+          <form onSubmit={this.onSubmit}>
+            <div className="form-row">
+              <label htmlFor="card-element">Credit or debit card</label>
+              <div id="card-element" />
+              <div id="card-errors">{this.state.error}</div>
+            </div>
+            <button>Submit Payment</button>
+          </form>
+          <div className="text-center">
+            <button onClick={onTogglePaymentModeClick} className="modal-toggle-link">Switch to { mode === 'yearly' ? 'lifetime' : 'yearly'} payment</button>
+          </div>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default PaymentForm

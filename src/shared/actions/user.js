@@ -71,3 +71,23 @@ export const logout = createAction(LOGOUT)
 
 export const SYNC_USER_FROM_LS = 'SYNC_USER_FROM_LS'
 export const syncUserFromLs = createAction(SYNC_USER_FROM_LS)
+
+export const SUBSCRIBE = 'SUBSCRIBE'
+export const SUBSCRIBE_SUCCESS = 'SUBSCRIBE_SUCCESS'
+export const SUBSCRIBE_FAILURE = 'SUBSCRIBE_FAILURE'
+export const subscribeRequest = createAction(SUBSCRIBE)
+export const subscribeSuccess = createAction(SUBSCRIBE_SUCCESS)
+export const subscribeFailure = createAction(SUBSCRIBE_FAILURE)
+export const subscribe = ({ token, mode }: Object) => (dispatch: Function) => {
+  dispatch(subscribeRequest())
+  return http(routes.subscribeEndpoint(), {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ token, mode }),
+  })
+  .then(res => dispatch(subscribeSuccess(res)))
+  .catch(err => dispatch(subscribeFailure(err)))
+}

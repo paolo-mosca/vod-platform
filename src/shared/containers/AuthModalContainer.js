@@ -2,7 +2,7 @@
 
 import { connect } from 'react-redux'
 
-import { login, createUser, lostPassword } from '../actions/user'
+import { login, createUser, lostPassword, subscribe } from '../actions/user'
 import { goToLogin, goToSignup, goToLostPassword, goToYearlyPayment, goToLifetimePayment,
   togglePaymentMode, closeModal } from '../actions/modal'
 import AuthModal from '../components/AuthModal'
@@ -21,6 +21,7 @@ const mapDispatchToProps = dispatch => ({
   onGoToLifetimePaymentClick: () => dispatch(goToLifetimePayment()),
   onTogglePaymentModeClick: () => dispatch(togglePaymentMode()),
   onCloseModal: () => dispatch(closeModal()),
+  onSubscribe: ({ token, mode }) => dispatch(subscribe({ token, mode })),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthModal)

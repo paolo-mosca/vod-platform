@@ -35,11 +35,26 @@ const UsersSchema = new Schema({
 
   subscriptions: {
     type: [{
-      type: Schema.Types.ObjectId,
-      ref: 'subscriptions',
+      period: {
+        type: String,
+        enum: ['yearly', 'monthly'],
+        required: true,
+      },
+      isActive: {
+        type: Boolean,
+        required: true,
+        default: true,
+      },
+      createdAt: {
+        type: Date,
+        default: Date.now,
+        required: true,
+      },
     }],
     default: [],
   },
+
+  stripeCustomerId: String,
 
   createdAt: {
     type: Date,

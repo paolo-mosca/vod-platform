@@ -32,6 +32,7 @@ const renderApp = (location: string, plainPartialState: ?Object, routerContext: 
       </head>
       <body>
         <div class="${APP_CONTAINER_CLASS}">${appHtml}</div>
+        <script src="https://js.stripe.com/v3/"></script>
         <script>
           window.__PRELOADED_STATE__ = ${JSON.stringify(store.getState())}
         </script>
