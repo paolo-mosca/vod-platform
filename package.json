@@ -6,9 +6,10 @@
     "prod:build": "rimraf lib dist && babel src -d lib --ignore .test.js && cross-env NODE_ENV=production webpack -p --progress",
     "prod:start": "cross-env NODE_ENV=production pm2 start lib/server && pm2 logs",
     "prod:stop": "pm2 delete server",
-    "lint": "lint-staged src webpack.config.babel.js",
-    "ut": "jest",
-    "test": "yarn lint && flow",
+    "ut": "jest --runInBand --forceExit",
+    "test": "yarn lint && flow && yarn ut",
+    "lint": "lint-staged",
+    "ci:test": "yarn eslint src/**/*.js webpack.config.babel.js && flow && yarn ut",
     "generate": "rc-autocomplete"
   },
   "git": {
@@ -16,6 +17,9 @@
       "pre-commit": "yarn test",
       "pre-push": "yarn test && yarn prod:build"
     }
+  },
+  "jest": {
+    "testPathIgnorePatterns": ["recipes.test.js"]
   },
   "lint-staged": {
     "src/**/*.js": "eslint",

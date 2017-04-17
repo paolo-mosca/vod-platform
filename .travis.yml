@@ -1,3 +1,12 @@
 language: node_js
 node_js: node
-script: yarn test && yarn prod:build
+services:
+  - mongodb
+script: yarn ci:test && yarn prod:build
+branches:
+  only:
+  - master
+  - "/v\\d\\./"
+cache:
+  directories:
+  - node_modules

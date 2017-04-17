@@ -81,7 +81,7 @@ const seedSkills = () => {
   return Promise.all(promises)
 }
 
-const seedRecipes = () => {
+const seedRecipes = () => { // eslint-disable-line
   serverLogger.log('Seeding recipes ...')
   const promises = recipes.map(r => Recipes.create(r))
   return Promise.all(promises)
@@ -107,10 +107,10 @@ const seed = () => {
     .then(seedCategories)
     .then(seedIngredients)
     .then(seedUsers)
-    .then(seedRecipes)
+    .then(seedEquipments)
     .then(seedLearningPaths)
     .then(seedChefs)
-    .then(seedEquipments)
+    // .then(seedRecipes)
     .then(logSeedSuccess)
     .catch(logSeedError)
     .then(() => { ready = true })
