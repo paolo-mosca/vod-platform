@@ -81,6 +81,10 @@ const seedSkills = () => {
 }
 
 const seedRecipes = () => { // eslint-disable-line
+  // @TODO [AdGo] 20/04/2017 - fix me
+  if (serverConfig.env === 'testing') {
+    return Promise.resolve([])
+  }
   serverLogger.log('Seeding recipes ...')
   const promises = recipes.map(r => Recipes.create(r))
   return Promise.all(promises)
@@ -109,7 +113,7 @@ const seed = () => {
     .then(seedEquipments)
     .then(seedLearningPaths)
     .then(seedChefs)
-    // .then(seedRecipes)
+    .then(seedRecipes)
     .then(logSeedSuccess)
     .catch(logSeedError)
     .then(() => { ready = true })
