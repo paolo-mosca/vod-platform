@@ -2,6 +2,7 @@
 
 import express from 'express'
 import mongoose from 'mongoose'
+import favicon from 'serve-favicon'
 
 import { STATIC_PATH } from '../shared/config'
 
@@ -14,7 +15,7 @@ import middlewares from './middlewares'
 
 mongoose.Promise = global.Promise
 const app = express()
-
+app.use(favicon('public/favicon.ico'))
 mongoose.connect(serverConfig.dbUrl)
 
 if (serverConfig.shouldSeed) {
