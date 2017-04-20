@@ -15,7 +15,7 @@
   "git": {
     "scripts": {
       "pre-commit": "yarn test",
-      "pre-push": "yarn test && yarn prod:build"
+      "pre-push": "yarn prod:build"
     }
   },
   "jest": {
