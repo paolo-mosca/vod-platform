@@ -8,7 +8,6 @@ import { STATIC_PATH } from '../shared/config'
 import seed from './serverUtils/seed'
 import serverConfig from './serverConfig'
 import serverLogger from './serverUtils/serverLogger'
-import pageRouter from './pageRouter'
 import api from './api'
 import middlewares from './middlewares'
 
@@ -25,7 +24,6 @@ middlewares.app(app)
 app.use(STATIC_PATH, express.static('dist'))
 app.use(STATIC_PATH, express.static('public'))
 app.use('/api', api)
-pageRouter(app)
 app.use(middlewares.error)
 app.use(middlewares.notFound)
 

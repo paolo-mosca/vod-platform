@@ -1,63 +1,15 @@
 {
   "scripts": {
-    "start": "yarn dev:start",
-    "dev:wds": "webpack-dev-server --progress",
-    "dev:start": "nodemon -e js,jsx --ignore lib --ignore dist --exec babel-node src/server",
-    "prod:build": "rimraf lib dist && babel src -d lib --ignore .test.js && cross-env NODE_ENV=production webpack -p --progress",
-    "prod:start": "cross-env NODE_ENV=production pm2 start lib/server && pm2 logs",
-    "prod:stop": "pm2 delete server",
-    "ut": "jest --runInBand --forceExit",
-    "test": "yarn lint && flow && yarn ut",
-    "lint": "lint-staged",
-    "ci:test": "yarn eslint src/**/*.js webpack.config.babel.js && flow && yarn ut",
-    "generate": "rc-autocomplete"
-  },
-  "git": {
-    "scripts": {
-      "pre-commit": "yarn test",
-      "pre-push": "yarn prod:build"
-    }
-  },
-  "jest": {
-    "testPathIgnorePatterns": ["recipes.test.js"]
-  },
-  "lint-staged": {
-    "src/**/*.js": "eslint",
-    "webpack.config.babel.js": "eslint"
+    "start": "nodemon -e js,jsx --ignore lib --ignore dist --exec babel-node src/server"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-core": "^6.24.0",
-    "babel-eslint": "^7.1.1",
-    "babel-jest": "^19.0.0",
-    "babel-loader": "^6.4.1",
-    "babel-plugin-flow-react-proptypes": "^0.21.0",
     "babel-preset-env": "^1.2.2",
-    "babel-preset-flow": "^6.23.0",
-    "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.22.0",
-    "cross-env": "^3.2.4",
-    "eslint": "^3.17.1",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-plugin-flowtype": "^2.30.3",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^3.0.2 || ^4.0.0",
-    "eslint-plugin-react": "^6.9.0",
-    "flow-bin": "^0.41.0",
-    "git-scripts": "^0.2.1",
-    "jest": "^19.0.2",
-    "lint-staged": "^3.4.0",
-    "nodemon": "^1.11.0",
-    "pm2": "^2.4.2",
-    "react-autocomplete-cli": "^0.0.3",
-    "rimraf": "^2.6.1",
-    "supertest": "^3.0.0",
-    "supertest-as-promised": "^4.0.2",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.2"
+    "nodemon": "^1.11.0"
   },
   "dependencies": {
-    "babel-polyfill": "^6.23.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.1",
     "compression": "^1.6.2",
@@ -65,25 +17,9 @@
     "custom-error-generator": "^7.0.0",
     "deasync": "^0.1.9",
     "express": "^4.15.2",
-    "express-jwt": "^5.1.0",
-    "isomorphic-fetch": "^2.2.1",
-    "jsonwebtoken": "^7.3.0",
-    "lodash.capitalize": "^4.2.1",
     "mongoose": "^4.9.1",
     "mongoose-type-email": "^1.0.3",
     "mongoose-unique-validator": "^1.0.4",
-    "morgan": "^1.8.1",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-helmet": "^4.0.0",
-    "react-hot-loader": "next",
-    "react-redux": "^5.0.3",
-    "react-router": "next",
-    "react-router-dom": "next",
-    "redux": "^3.6.0",
-    "redux-actions": "^2.0.1",
-    "redux-form": "^6.6.1",
-    "redux-logger": "^2.8.2",
-    "redux-thunk": "^2.2.0"
+    "morgan": "^1.8.1"
   }
 }
