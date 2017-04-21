@@ -83,7 +83,6 @@ export const subscribe = ({ token, mode }: Object) => (dispatch: Function) => {
   return http(routes.subscribeEndpoint(), {
     method: 'POST',
     headers: {
-      Accept: 'application/json',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ token, mode }),

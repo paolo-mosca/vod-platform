@@ -23,13 +23,13 @@ const decodeToken = (req, res, next) => {
 // call after decodeToken
 const getFreshUser = (req, res, next) => {
   if (!req.user) {
-    res.status(401).send('only users can perform this operation')
+    res.status(401).json({ message: 'only users can perform this operation' })
     return
   }
   User.findById(req.user._id)
     .then((user) => {
       if (!user) {
-        res.status(401).send('token didn\'t match any user')
+        res.status(401).json({ message: 'token didn\'t match any user' })
         return
       }
       req.user = user
@@ -41,7 +41,7 @@ const getFreshUser = (req, res, next) => {
 // call after getFreshUser
 const verifyAdmin = (req, res, next) => {
   if (!req.user.isAdmin) {
-    res.status(401).send('only admins can perform this operation')
+    res.status(401).json({ message: 'only admins can perform this operation' })
     return
   }
   next()
@@ -63,13 +63,13 @@ const verifyGotRecipeAccess = (req, res, next) => {
     next()
     return
   }
-  res.status(401).send('this recipe requires a subscription')
+  res.status(401).json({ message: 'this recipe requires a subscription' })
 }
 
 // call after getFreshUser
 const verifyOwner = (req, res, next) => {
   if (req.user._id !== req.params.id) {
-    res.status(401).send('only the owner can perform this operation')
+    res.status(401).json({ message: 'only the owner can perform this operation' })
     return
   }
   next()

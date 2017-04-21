@@ -33,26 +33,26 @@ const UsersSchema = new Schema({
     default: false,
   },
 
-  subscriptions: {
-    type: [{
-      period: {
-        type: String,
-        enum: ['yearly', 'monthly'],
-        required: true,
-      },
-      isActive: {
-        type: Boolean,
-        required: true,
-        default: true,
-      },
-      createdAt: {
-        type: Date,
-        default: Date.now,
-        required: true,
-      },
-    }],
-    default: [],
-  },
+  // subscriptions: {
+  //   type: [{
+  //     period: {
+  //       type: String,
+  //       enum: ['yearly', 'monthly'],
+  //       required: true,
+  //     },
+  //     isActive: {
+  //       type: Boolean,
+  //       required: true,
+  //       default: true,
+  //     },
+  //     createdAt: {
+  //       type: Date,
+  //       default: Date.now,
+  //       required: true,
+  //     },
+  //   }],
+  //   default: [],
+  // },
 
   stripeCustomerId: String,
 

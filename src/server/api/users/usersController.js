@@ -22,19 +22,19 @@ const getItem = (req, res, next) => {
 
 const createItem = (req, res, next) => {
   Users.create(req.body)
-    .then(user => res.status(201).send(user))
+    .then(user => res.status(201).json(user))
     .catch(next)
 }
 
 const updateItem = (req, res, next) => {
   Users.findByIdAndUpdate(req.params.id, req.body)
-    .then(() => res.status(204).send())
+    .then(() => res.status(204).json())
     .catch(next)
 }
 
 const deleteItem = (req, res, next) => {
   Users.findByIdAndRemove(req.params.id)
-    .then(() => res.status(204).send())
+    .then(() => res.status(204).json())
     .catch(next)
 }
 
@@ -73,13 +73,15 @@ const lostPassword = (req, res, next) => {
 }
 
 const subscribe = (req, res, next) => {
-  // maybe if the user already subscribed before and has a stripeCustomerId,
-  // no need for a token.
-  // TODO :: research cancellations
-  const { user } = req
-  const { mode, token } = req.body
-  Users.findByIdAndUpdate(user._id, { token })
-    .then(() => res.status(204).send())
+  const { mode: plan, token } = req.body
+  stripeClient.customers.create({ source: token.id })
+  .then(customer => Promise.all([
+    stripeClient.subscriptions.create({
+      customer: customer.id,
+      plan,
+    }),
+    Users.findByIdAndUpdate(req.user._id, { stripeCustomerId: customer.id }),
+  ])).then(() => res.status(204).send())
     .catch(next)
 }
 

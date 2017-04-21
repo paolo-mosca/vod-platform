@@ -405,11 +405,11 @@ export const recipes = [paAmbTomquetRecipe]
 // ]
 
 // subscriptions
-const peterSubscription = { period: 'monthly', isActive: true }
-export const subscriptions = [peterSubscription]
+// const peterSubscription = { period: 'monthly', isActive: true }
+// export const subscriptions = [peterSubscription]
 
 // users
-const peter = { name: 'Peter Joseph', password: 'peter', subscriptions: [peterSubscription._id], email: 'peterjoseph@gmail.com', _id: '56f5c57e63cb81a7148778a2' }
+const peter = { name: 'Peter Joseph', password: 'peter', email: 'peterjoseph@gmail.com', _id: '56f5c57e63cb81a7148778a2' }
 const jacque = { name: 'Jacque Fresco', password: 'Jacque', recipes: [paAmbTomquetRecipe._id], email: 'jacquefresco@gmail.com', _id: '56f5d755340883743e85c7c8' }
 const dan = { name: 'Dan Admin', password: 'Dan', isAdmin: true, email: 'danadmin@gmail.com', _id: '56f5f355df1d5a376fc43306' }
 export const users = [peter, jacque, dan]

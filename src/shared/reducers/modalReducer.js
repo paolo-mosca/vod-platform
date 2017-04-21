@@ -6,7 +6,7 @@ import { GO_TO_LOGIN, GO_TO_SIGNUP, GO_TO_LOST_PASSWORD, CLOSE_MODAL, GO_TO_YEAR
 import { NO_RECIPE_ACCESS } from '../actions/recipes'
 
 const initialState = {
-  status: 'yearlyPayment',
+  status: 'closed',
 }
 
 const modalReducer = (state: Object = initialState, action: { type: string, payload: any }) => {

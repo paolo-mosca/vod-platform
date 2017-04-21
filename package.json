@@ -21,7 +21,8 @@
   "jest": {
     "testPathIgnorePatterns": [
       "recipes.test.js"
-    ]
+    ],
+    "setupTestFrameworkScriptFile": "./test/jestSetup"
   },
   "lint-staged": {
     "src/**/*.js": "eslint",
@@ -51,6 +52,7 @@
     "lint-staged": "^3.4.0",
     "nodemon": "^1.11.0",
     "pm2": "^2.4.2",
+    "pretty-format": "^19.0.0",
     "react-autocomplete-cli": "^0.0.3",
     "rimraf": "^2.6.1",
     "supertest": "^3.0.0",
@@ -66,6 +68,7 @@
     "cors": "^2.8.1",
     "custom-error-generator": "^7.0.0",
     "deasync": "^0.1.9",
+    "dotenv": "^4.0.0",
     "express": "^4.15.2",
     "express-jwt": "^5.1.0",
     "isomorphic-fetch": "^2.2.1",
