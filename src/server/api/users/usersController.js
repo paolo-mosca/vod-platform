@@ -74,14 +74,21 @@ const lostPassword = (req, res, next) => {
 
 const subscribe = (req, res, next) => {
   const { mode: plan, token } = req.body
+  let customerUpperScope
   stripeClient.customers.create({ source: token.id })
-  .then(customer => Promise.all([
-    stripeClient.subscriptions.create({
-      customer: customer.id,
-      plan,
-    }),
-    Users.findByIdAndUpdate(req.user._id, { stripeCustomerId: customer.id }),
-  ])).then(() => res.status(204).send())
+  .then((customer) => {
+    customerUpperScope = customer
+    return Promise.all([
+      stripeClient.subscriptions.create({
+        customer: customer.id,
+        plan,
+      }),
+      Users.findByIdAndUpdate(req.user._id, { stripeCustomerId: customer.id }),
+    ])
+  }).then(() => res.status(201).json({
+    customerId: customerUpperScope.id,
+    isSubscribed: true,
+  }))
     .catch(next)
 }
 
